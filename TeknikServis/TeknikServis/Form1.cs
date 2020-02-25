@@ -23,5 +23,12 @@ namespace TeknikServis
             frmUrunListesi.MdiParent = this;
             frmUrunListesi.Show();
         }
+
+        private void btnYeniUrun_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmYeniUrun frmYeniUrun = new Forms.FrmYeniUrun();
+            //frmYeniUrun.MdiParent = this;
+            frmYeniUrun.Show();
+        }
     }
 }

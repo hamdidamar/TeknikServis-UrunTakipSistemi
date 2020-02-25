@@ -40,8 +40,19 @@ namespace TeknikServis.Forms
         }
         public void Listele()
         {
-            var degerler = db.Tbl_Urun.ToList();
-            grdUrunListesi.DataSource = degerler;
+            //var degerler = db.Tbl_Urun.ToList();
+            var degerler = from u in db.Tbl_Urun
+                           select new
+                           {
+                               u.ID,
+                               u.Adi,
+                               u.Marka,
+                               Kategori = u.Tbl_Kategori.Adi,
+                               u.StokSayisi,
+                               u.AlisFiyat,
+                               u.SatisFiyat
+                           };
+            grdUrunListesi.DataSource = degerler.ToList();
             cmbKategoriler.Properties.DataSource = db.Tbl_Kategori.ToList();
             
         }
