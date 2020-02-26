@@ -30,5 +30,25 @@ namespace TeknikServis
             //frmYeniUrun.MdiParent = this;
             frmYeniUrun.Show();
         }
+
+        private void btnKategoriListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmKategori frmKategoriListesi = new Forms.FrmKategori();
+            frmKategoriListesi.MdiParent = this;
+            frmKategoriListesi.Show();
+        }
+
+        private void btnYeniKategori_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmYeniKategori frmYeniKategori = new Forms.FrmYeniKategori();
+            frmYeniKategori.Show();
+        }
+
+        private void btnUrunIstatislikleri_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmUrunIstatislik frmUrunIstatistlik = new Forms.FrmUrunIstatislik();
+            frmUrunIstatistlik.MdiParent = this;
+            frmUrunIstatistlik.Show();
+        }
     }
 }

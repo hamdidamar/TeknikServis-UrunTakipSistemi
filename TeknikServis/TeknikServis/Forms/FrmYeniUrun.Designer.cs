@@ -286,6 +286,7 @@
             // textEdit7
             // 
             this.textEdit7.EditValue = "Yeni Ürün Ekleme";
+            this.textEdit7.Enabled = false;
             this.textEdit7.Location = new System.Drawing.Point(110, 22);
             this.textEdit7.Name = "textEdit7";
             this.textEdit7.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -312,7 +313,7 @@
             // 
             // btnKaydet
             // 
-            this.btnKaydet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnKaydet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKaydet.ImageOptions.Image")));
             this.btnKaydet.Location = new System.Drawing.Point(29, 420);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(136, 32);
@@ -322,12 +323,13 @@
             // 
             // btnVazgec
             // 
-            this.btnVazgec.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnVazgec.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnVazgec.ImageOptions.Image")));
             this.btnVazgec.Location = new System.Drawing.Point(171, 420);
             this.btnVazgec.Name = "btnVazgec";
             this.btnVazgec.Size = new System.Drawing.Size(136, 32);
             this.btnVazgec.TabIndex = 21;
             this.btnVazgec.Text = "Vazgeç";
+            this.btnVazgec.Click += new System.EventHandler(this.btnVazgec_Click);
             // 
             // FrmYeniUrun
             // 

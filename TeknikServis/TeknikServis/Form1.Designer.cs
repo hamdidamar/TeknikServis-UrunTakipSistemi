@@ -174,6 +174,7 @@
             this.btnKategoriListesi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKategoriListesi.ImageOptions.Image")));
             this.btnKategoriListesi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnKategoriListesi.ImageOptions.LargeImage")));
             this.btnKategoriListesi.Name = "btnKategoriListesi";
+            this.btnKategoriListesi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKategoriListesi_ItemClick);
             // 
             // btnYeniKategori
             // 
@@ -182,6 +183,7 @@
             this.btnYeniKategori.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnYeniKategori.ImageOptions.Image")));
             this.btnYeniKategori.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnYeniKategori.ImageOptions.LargeImage")));
             this.btnYeniKategori.Name = "btnYeniKategori";
+            this.btnYeniKategori.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnYeniKategori_ItemClick);
             // 
             // btnUrunListesi
             // 
@@ -216,6 +218,7 @@
             this.btnUrunIstatislikleri.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUrunIstatislikleri.ImageOptions.Image")));
             this.btnUrunIstatislikleri.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnUrunIstatislikleri.ImageOptions.LargeImage")));
             this.btnUrunIstatislikleri.Name = "btnUrunIstatislikleri";
+            this.btnUrunIstatislikleri.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUrunIstatislikleri_ItemClick);
             // 
             // btnMarkaIstatislikleri
             // 

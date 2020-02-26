@@ -109,11 +109,29 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmKategori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmKategori.Designer.cs">
+      <DependentUpon>FrmKategori.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmUrunIstatislik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmUrunIstatislik.Designer.cs">
+      <DependentUpon>FrmUrunIstatislik.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmUrunListesi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FrmUrunListesi.Designer.cs">
       <DependentUpon>FrmUrunListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmYeniKategori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmYeniKategori.Designer.cs">
+      <DependentUpon>FrmYeniKategori.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmYeniUrun.cs">
       <SubType>Form</SubType>
@@ -177,8 +195,17 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmKategori.resx">
+      <DependentUpon>FrmKategori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmUrunIstatislik.resx">
+      <DependentUpon>FrmUrunIstatislik.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmUrunListesi.resx">
       <DependentUpon>FrmUrunListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmYeniKategori.resx">
+      <DependentUpon>FrmYeniKategori.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmYeniUrun.resx">
       <DependentUpon>FrmYeniUrun.cs</DependentUpon>
