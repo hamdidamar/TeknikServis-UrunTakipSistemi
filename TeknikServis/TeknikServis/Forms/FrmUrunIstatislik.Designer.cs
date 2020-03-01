@@ -152,10 +152,11 @@
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
-            this.pictureEdit1.Location = new System.Drawing.Point(138, 43);
+            this.pictureEdit1.Location = new System.Drawing.Point(182, 46);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit1.Size = new System.Drawing.Size(80, 80);
@@ -199,10 +200,11 @@
             // pictureEdit2
             // 
             this.pictureEdit2.EditValue = ((object)(resources.GetObject("pictureEdit2.EditValue")));
-            this.pictureEdit2.Location = new System.Drawing.Point(168, 51);
+            this.pictureEdit2.Location = new System.Drawing.Point(182, 46);
             this.pictureEdit2.Name = "pictureEdit2";
             this.pictureEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit2.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit2.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit2.Size = new System.Drawing.Size(80, 80);
@@ -246,10 +248,11 @@
             // pictureEdit3
             // 
             this.pictureEdit3.EditValue = ((object)(resources.GetObject("pictureEdit3.EditValue")));
-            this.pictureEdit3.Location = new System.Drawing.Point(168, 51);
+            this.pictureEdit3.Location = new System.Drawing.Point(182, 46);
             this.pictureEdit3.Name = "pictureEdit3";
             this.pictureEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit3.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit3.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit3.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit3.Size = new System.Drawing.Size(80, 80);
@@ -293,10 +296,11 @@
             // pictureEdit4
             // 
             this.pictureEdit4.EditValue = ((object)(resources.GetObject("pictureEdit4.EditValue")));
-            this.pictureEdit4.Location = new System.Drawing.Point(168, 51);
+            this.pictureEdit4.Location = new System.Drawing.Point(179, 46);
             this.pictureEdit4.Name = "pictureEdit4";
             this.pictureEdit4.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit4.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit4.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit4.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit4.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit4.Size = new System.Drawing.Size(80, 80);
@@ -340,10 +344,11 @@
             // pictureEdit5
             // 
             this.pictureEdit5.EditValue = ((object)(resources.GetObject("pictureEdit5.EditValue")));
-            this.pictureEdit5.Location = new System.Drawing.Point(168, 51);
+            this.pictureEdit5.Location = new System.Drawing.Point(182, 46);
             this.pictureEdit5.Name = "pictureEdit5";
             this.pictureEdit5.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit5.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit5.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit5.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit5.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit5.Size = new System.Drawing.Size(80, 80);
@@ -571,10 +576,11 @@
             // pictureEdit9
             // 
             this.pictureEdit9.EditValue = ((object)(resources.GetObject("pictureEdit9.EditValue")));
-            this.pictureEdit9.Location = new System.Drawing.Point(168, 51);
+            this.pictureEdit9.Location = new System.Drawing.Point(182, 46);
             this.pictureEdit9.Name = "pictureEdit9";
             this.pictureEdit9.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit9.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit9.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit9.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit9.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit9.Size = new System.Drawing.Size(80, 80);
@@ -623,17 +629,18 @@
             this.lblEnFazlaUrunuOlanMarka.Appearance.Options.UseForeColor = true;
             this.lblEnFazlaUrunuOlanMarka.Location = new System.Drawing.Point(17, 52);
             this.lblEnFazlaUrunuOlanMarka.Name = "lblEnFazlaUrunuOlanMarka";
-            this.lblEnFazlaUrunuOlanMarka.Size = new System.Drawing.Size(40, 47);
+            this.lblEnFazlaUrunuOlanMarka.Size = new System.Drawing.Size(100, 47);
             this.lblEnFazlaUrunuOlanMarka.TabIndex = 1;
-            this.lblEnFazlaUrunuOlanMarka.Text = "35";
+            this.lblEnFazlaUrunuOlanMarka.Text = "Vestel";
             // 
             // pictureEdit10
             // 
             this.pictureEdit10.EditValue = ((object)(resources.GetObject("pictureEdit10.EditValue")));
-            this.pictureEdit10.Location = new System.Drawing.Point(168, 51);
+            this.pictureEdit10.Location = new System.Drawing.Point(182, 46);
             this.pictureEdit10.Name = "pictureEdit10";
             this.pictureEdit10.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit10.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit10.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit10.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit10.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit10.Size = new System.Drawing.Size(80, 80);
@@ -677,10 +684,11 @@
             // pictureEdit6
             // 
             this.pictureEdit6.EditValue = ((object)(resources.GetObject("pictureEdit6.EditValue")));
-            this.pictureEdit6.Location = new System.Drawing.Point(138, 41);
+            this.pictureEdit6.Location = new System.Drawing.Point(182, 46);
             this.pictureEdit6.Name = "pictureEdit6";
             this.pictureEdit6.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit6.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit6.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit6.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit6.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit6.Size = new System.Drawing.Size(80, 80);
@@ -724,10 +732,11 @@
             // pictureEdit8
             // 
             this.pictureEdit8.EditValue = ((object)(resources.GetObject("pictureEdit8.EditValue")));
-            this.pictureEdit8.Location = new System.Drawing.Point(168, 51);
+            this.pictureEdit8.Location = new System.Drawing.Point(179, 46);
             this.pictureEdit8.Name = "pictureEdit8";
             this.pictureEdit8.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit8.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit8.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit8.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit8.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit8.Size = new System.Drawing.Size(80, 80);
@@ -771,10 +780,11 @@
             // pictureEdit7
             // 
             this.pictureEdit7.EditValue = ((object)(resources.GetObject("pictureEdit7.EditValue")));
-            this.pictureEdit7.Location = new System.Drawing.Point(168, 51);
+            this.pictureEdit7.Location = new System.Drawing.Point(182, 46);
             this.pictureEdit7.Name = "pictureEdit7";
             this.pictureEdit7.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit7.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit7.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit7.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit7.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit7.Size = new System.Drawing.Size(80, 80);
@@ -881,9 +891,9 @@
             this.lblBilgisayarStokSayisi.Appearance.Options.UseForeColor = true;
             this.lblBilgisayarStokSayisi.Location = new System.Drawing.Point(17, 52);
             this.lblBilgisayarStokSayisi.Name = "lblBilgisayarStokSayisi";
-            this.lblBilgisayarStokSayisi.Size = new System.Drawing.Size(175, 47);
+            this.lblBilgisayarStokSayisi.Size = new System.Drawing.Size(80, 47);
             this.lblBilgisayarStokSayisi.TabIndex = 1;
-            this.lblBilgisayarStokSayisi.Text = "HP Laptop";
+            this.lblBilgisayarStokSayisi.Text = "2105";
             // 
             // labelControl26
             // 
@@ -915,9 +925,9 @@
             this.lblKucukEvAletleriStokSayisi.Appearance.Options.UseForeColor = true;
             this.lblKucukEvAletleriStokSayisi.Location = new System.Drawing.Point(17, 52);
             this.lblKucukEvAletleriStokSayisi.Name = "lblKucukEvAletleriStokSayisi";
-            this.lblKucukEvAletleriStokSayisi.Size = new System.Drawing.Size(138, 47);
+            this.lblKucukEvAletleriStokSayisi.Size = new System.Drawing.Size(80, 47);
             this.lblKucukEvAletleriStokSayisi.TabIndex = 1;
-            this.lblKucukEvAletleriStokSayisi.Text = "Su Isıtıcı";
+            this.lblKucukEvAletleriStokSayisi.Text = "3057";
             // 
             // labelControl41
             // 
@@ -949,9 +959,9 @@
             this.lblKargodakiUrunSayisi.Appearance.Options.UseForeColor = true;
             this.lblKargodakiUrunSayisi.Location = new System.Drawing.Point(17, 52);
             this.lblKargodakiUrunSayisi.Name = "lblKargodakiUrunSayisi";
-            this.lblKargodakiUrunSayisi.Size = new System.Drawing.Size(73, 47);
+            this.lblKargodakiUrunSayisi.Size = new System.Drawing.Size(60, 47);
             this.lblKargodakiUrunSayisi.TabIndex = 1;
-            this.lblKargodakiUrunSayisi.Text = "Fırın";
+            this.lblKargodakiUrunSayisi.Text = "100";
             // 
             // labelControl43
             // 
@@ -983,9 +993,9 @@
             this.lblBeyazEsyaStokSayisi.Appearance.Options.UseForeColor = true;
             this.lblBeyazEsyaStokSayisi.Location = new System.Drawing.Point(17, 52);
             this.lblBeyazEsyaStokSayisi.Name = "lblBeyazEsyaStokSayisi";
-            this.lblBeyazEsyaStokSayisi.Size = new System.Drawing.Size(178, 47);
+            this.lblBeyazEsyaStokSayisi.Size = new System.Drawing.Size(80, 47);
             this.lblBeyazEsyaStokSayisi.TabIndex = 1;
-            this.lblBeyazEsyaStokSayisi.Text = "Beyaz Eşya";
+            this.lblBeyazEsyaStokSayisi.Text = "2000";
             // 
             // labelControl45
             // 
@@ -1017,9 +1027,9 @@
             this.lblOnarilmisUrunSayisi.Appearance.Options.UseForeColor = true;
             this.lblOnarilmisUrunSayisi.Location = new System.Drawing.Point(17, 52);
             this.lblOnarilmisUrunSayisi.Name = "lblOnarilmisUrunSayisi";
-            this.lblOnarilmisUrunSayisi.Size = new System.Drawing.Size(164, 47);
+            this.lblOnarilmisUrunSayisi.Size = new System.Drawing.Size(80, 47);
             this.lblOnarilmisUrunSayisi.TabIndex = 1;
-            this.lblOnarilmisUrunSayisi.Text = "Buzdolabı";
+            this.lblOnarilmisUrunSayisi.Text = "1520";
             // 
             // labelControl47
             // 
