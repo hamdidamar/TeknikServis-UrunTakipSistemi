@@ -115,6 +115,12 @@
     <Compile Include="Forms\FrmKategori.Designer.cs">
       <DependentUpon>FrmKategori.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmMarkaIstatislik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMarkaIstatislik.Designer.cs">
+      <DependentUpon>FrmMarkaIstatislik.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmUrunIstatislik.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmKategori.resx">
       <DependentUpon>FrmKategori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMarkaIstatislik.resx">
+      <DependentUpon>FrmMarkaIstatislik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmUrunIstatislik.resx">
       <DependentUpon>FrmUrunIstatislik.cs</DependentUpon>

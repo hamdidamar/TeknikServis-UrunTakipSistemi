@@ -50,5 +50,12 @@ namespace TeknikServis
             frmUrunIstatistlik.MdiParent = this;
             frmUrunIstatistlik.Show();
         }
+
+        private void btnMarkaIstatislikleri_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmMarkaIstatislik frmMarkaIstatislik = new Forms.FrmMarkaIstatislik();
+            frmMarkaIstatislik.MdiParent = this;
+            frmMarkaIstatislik.Show();
+        }
     }
 }

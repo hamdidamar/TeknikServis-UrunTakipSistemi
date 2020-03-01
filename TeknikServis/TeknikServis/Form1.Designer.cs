@@ -227,6 +227,7 @@
             this.btnMarkaIstatislikleri.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMarkaIstatislikleri.ImageOptions.Image")));
             this.btnMarkaIstatislikleri.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnMarkaIstatislikleri.ImageOptions.LargeImage")));
             this.btnMarkaIstatislikleri.Name = "btnMarkaIstatislikleri";
+            this.btnMarkaIstatislikleri.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMarkaIstatislikleri_ItemClick);
             // 
             // btnArizaliUrunListesi
             // 
