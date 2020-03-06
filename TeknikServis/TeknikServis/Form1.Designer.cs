@@ -284,6 +284,7 @@
             this.btnMusteriListesi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMusteriListesi.ImageOptions.Image")));
             this.btnMusteriListesi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnMusteriListesi.ImageOptions.LargeImage")));
             this.btnMusteriListesi.Name = "btnMusteriListesi";
+            this.btnMusteriListesi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMusteriListesi_ItemClick);
             // 
             // btnMusteriIlIstatistligi
             // 
@@ -292,6 +293,7 @@
             this.btnMusteriIlIstatistligi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMusteriIlIstatistligi.ImageOptions.Image")));
             this.btnMusteriIlIstatistligi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnMusteriIlIstatistligi.ImageOptions.LargeImage")));
             this.btnMusteriIlIstatistligi.Name = "btnMusteriIlIstatistligi";
+            this.btnMusteriIlIstatistligi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMusteriIlIstatistligi_ItemClick);
             // 
             // btnMusteriHareketleri
             // 
@@ -726,6 +728,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);

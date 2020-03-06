@@ -17,7 +17,7 @@ namespace TeknikServis.Forms
             InitializeComponent();
         }
 
-        DboTeknikServisEntities db = new DboTeknikServisEntities();
+        DboTeknikServisEntities1 db = new DboTeknikServisEntities1();
         private void FrmUrunIstatislik_Load(object sender, EventArgs e)
         {
             lblToplamUrunSayisi.Text = db.Tbl_Urun.Count().ToString();

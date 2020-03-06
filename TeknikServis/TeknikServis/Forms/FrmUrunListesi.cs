@@ -16,7 +16,7 @@ namespace TeknikServis.Forms
         {
             InitializeComponent();
         }
-        DboTeknikServisEntities db = new DboTeknikServisEntities();
+        DboTeknikServisEntities1 db = new DboTeknikServisEntities1();
         private void FrmUrunListesi_Load(object sender, EventArgs e)
         {
             Listele();
@@ -27,6 +27,7 @@ namespace TeknikServis.Forms
             Tbl_Urun urun = new Tbl_Urun();
             urun.Adi = txtUrunAd.Text;
             urun.Marka = txtMarka.Text;
+            //urun.KategoriID = cmbKategoriler.Text;
             urun.AlisFiyat = decimal.Parse(txtAlisFiyat.Text);
             urun.SatisFiyat = decimal.Parse(txtSatisFiyat.Text);
             urun.StokSayisi = int.Parse(txtStok.Text);

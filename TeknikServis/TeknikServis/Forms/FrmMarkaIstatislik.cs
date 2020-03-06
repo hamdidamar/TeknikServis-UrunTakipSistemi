@@ -16,7 +16,7 @@ namespace TeknikServis.Forms
         {
             InitializeComponent();
         }
-        DboTeknikServisEntities db = new DboTeknikServisEntities();
+        DboTeknikServisEntities1 db = new DboTeknikServisEntities1();
         private void FrmMarkaIstatislik_Load(object sender, EventArgs e)
         {
             var degerler = db.Tbl_Urun.OrderBy(x => x.Marka).GroupBy(x => x.Marka).Select(z => new

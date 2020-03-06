@@ -311,37 +311,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DboTeknikServisModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Admin" EntityType="Self.Tbl_Admin" Schema="dbo" store:Type="Tables" />
@@ -481,6 +450,8 @@
           <Property Name="Tarih" Type="DateTime" Precision="0" />
           <Property Name="Saat" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
           <Property Name="VergiDaire" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CariID" Type="Int32" />
+          <Property Name="PersonelID" Type="Int32" />
           <NavigationProperty Name="Tbl_Cari" Relationship="Self.FK_Tbl_FaturaBilgi_Tbl_Cari" FromRole="Tbl_FaturaBilgi" ToRole="Tbl_Cari" />
           <NavigationProperty Name="Tbl_Personel" Relationship="Self.FK_Tbl_FaturaBilgi_Tbl_Personel" FromRole="Tbl_FaturaBilgi" ToRole="Tbl_Personel" />
           <NavigationProperty Name="Tbl_FaturaDetay" Relationship="Self.FK_Tbl_FaturaDetay_Tbl_FaturaBilgi" FromRole="Tbl_FaturaBilgi" ToRole="Tbl_FaturaDetay" />
@@ -494,6 +465,7 @@
           <Property Name="Adet" Type="Int32" />
           <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Tutar" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="FaturaID" Type="Int32" />
           <NavigationProperty Name="Tbl_FaturaBilgi" Relationship="Self.FK_Tbl_FaturaDetay_Tbl_FaturaBilgi" FromRole="Tbl_FaturaDetay" ToRole="Tbl_FaturaBilgi" />
         </EntityType>
         <EntityType Name="Tbl_Gider">
@@ -529,6 +501,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DepartmanID" Type="Int32" />
           <Property Name="Fotograf" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -547,6 +520,7 @@
           <Property Name="AlisFiyat" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="SatisFiyat" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="StokSayisi" Type="Int32" />
+          <Property Name="KategoriID" Type="Int32" />
           <Property Name="Durum" Type="Boolean" />
           <NavigationProperty Name="Tbl_Kategori" Relationship="Self.FK_Tbl_Urun_Tbl_Kategori" FromRole="Tbl_Urun" ToRole="Tbl_Kategori" />
           <NavigationProperty Name="Tbl_UrunHareket" Relationship="Self.FK_Tbl_UrunHareket_Tbl_Urun" FromRole="Tbl_Urun" ToRole="Tbl_UrunHareket" />
@@ -558,6 +532,9 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UrunID" Type="Int32" />
+          <Property Name="CariID" Type="Int32" />
+          <Property Name="PersonelID" Type="Int32" />
           <Property Name="Tarih" Type="DateTime" Precision="0" />
           <Property Name="Adet" Type="Int32" />
           <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="2" />
@@ -570,6 +547,9 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UrunID" Type="Int32" />
+          <Property Name="CariID" Type="Int32" />
+          <Property Name="PersonelID" Type="Int32" />
           <Property Name="GelisTarih" Type="DateTime" Precision="0" />
           <Property Name="CikisTarih" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Tbl_Cari" Relationship="Self.FK_Tbl_UrunKabul_Tbl_Cari" FromRole="Tbl_UrunKabul" ToRole="Tbl_Cari" />
@@ -581,6 +561,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UrunID" Type="Int32" />
           <Property Name="Durum" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="SonTarih" Type="Int32" />
           <Property Name="TakipKod" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
@@ -589,52 +570,148 @@
         <Association Name="FK_Tbl_FaturaBilgi_Tbl_Cari">
           <End Role="Tbl_Cari" Type="Self.Tbl_Cari" Multiplicity="0..1" />
           <End Role="Tbl_FaturaBilgi" Type="Self.Tbl_FaturaBilgi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Cari">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tbl_FaturaBilgi">
+              <PropertyRef Name="CariID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tbl_UrunHareket_Tbl_Cari">
           <End Role="Tbl_Cari" Type="Self.Tbl_Cari" Multiplicity="0..1" />
           <End Role="Tbl_UrunHareket" Type="Self.Tbl_UrunHareket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Cari">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tbl_UrunHareket">
+              <PropertyRef Name="CariID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tbl_UrunKabul_Tbl_Cari">
           <End Role="Tbl_Cari" Type="Self.Tbl_Cari" Multiplicity="0..1" />
           <End Role="Tbl_UrunKabul" Type="Self.Tbl_UrunKabul" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Cari">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tbl_UrunKabul">
+              <PropertyRef Name="CariID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tbl_Personel_Tbl_Departman">
           <End Role="Tbl_Departman" Type="Self.Tbl_Departman" Multiplicity="0..1" />
           <End Role="Tbl_Personel" Type="Self.Tbl_Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Departman">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tbl_Personel">
+              <PropertyRef Name="DepartmanID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tbl_FaturaBilgi_Tbl_Personel">
           <End Role="Tbl_Personel" Type="Self.Tbl_Personel" Multiplicity="0..1" />
           <End Role="Tbl_FaturaBilgi" Type="Self.Tbl_FaturaBilgi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Personel">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tbl_FaturaBilgi">
+              <PropertyRef Name="PersonelID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tbl_FaturaDetay_Tbl_FaturaBilgi">
           <End Role="Tbl_FaturaBilgi" Type="Self.Tbl_FaturaBilgi" Multiplicity="0..1" />
           <End Role="Tbl_FaturaDetay" Type="Self.Tbl_FaturaDetay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_FaturaBilgi">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tbl_FaturaDetay">
+              <PropertyRef Name="FaturaID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tbl_Urun_Tbl_Kategori">
           <End Role="Tbl_Kategori" Type="Self.Tbl_Kategori" Multiplicity="0..1" />
           <End Role="Tbl_Urun" Type="Self.Tbl_Urun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Kategori">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tbl_Urun">
+              <PropertyRef Name="KategoriID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tbl_UrunHareket_Tbl_Personel">
           <End Role="Tbl_Personel" Type="Self.Tbl_Personel" Multiplicity="0..1" />
           <End Role="Tbl_UrunHareket" Type="Self.Tbl_UrunHareket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Personel">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tbl_UrunHareket">
+              <PropertyRef Name="PersonelID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tbl_UrunKabul_Tbl_Personel">
           <End Role="Tbl_Personel" Type="Self.Tbl_Personel" Multiplicity="0..1" />
           <End Role="Tbl_UrunKabul" Type="Self.Tbl_UrunKabul" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Personel">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tbl_UrunKabul">
+              <PropertyRef Name="PersonelID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tbl_UrunHareket_Tbl_Urun">
           <End Role="Tbl_Urun" Type="Self.Tbl_Urun" Multiplicity="0..1" />
           <End Role="Tbl_UrunHareket" Type="Self.Tbl_UrunHareket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Urun">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tbl_UrunHareket">
+              <PropertyRef Name="UrunID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tbl_UrunKabul_Tbl_Urun">
           <End Role="Tbl_Urun" Type="Self.Tbl_Urun" Multiplicity="0..1" />
           <End Role="Tbl_UrunKabul" Type="Self.Tbl_UrunKabul" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Urun">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tbl_UrunKabul">
+              <PropertyRef Name="UrunID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tbl_UrunTakip_Tbl_Urun">
           <End Role="Tbl_Urun" Type="Self.Tbl_Urun" Multiplicity="0..1" />
           <End Role="Tbl_UrunTakip" Type="Self.Tbl_UrunTakip" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Urun">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tbl_UrunTakip">
+              <PropertyRef Name="UrunID" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DboTeknikServisEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DboTeknikServisEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Tbl_Admin" EntityType="Self.Tbl_Admin" />
           <EntitySet Name="Tbl_ArizaDetay" EntityType="Self.Tbl_ArizaDetay" />
@@ -698,54 +775,13 @@
             <End Role="Tbl_Urun" EntitySet="Tbl_Urun" />
             <End Role="Tbl_UrunTakip" EntitySet="Tbl_UrunTakip" />
           </AssociationSet>
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DboTeknikServisModel.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DboTeknikServisModel.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
         </EntityContainer>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DboTeknikServisModelStoreContainer" CdmEntityContainer="DboTeknikServisEntities">
+        <EntityContainerMapping StorageEntityContainer="DboTeknikServisModelStoreContainer" CdmEntityContainer="DboTeknikServisEntities1">
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="DboTeknikServisModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -815,6 +851,8 @@
                 <ScalarProperty Name="Tarih" ColumnName="Tarih" />
                 <ScalarProperty Name="Saat" ColumnName="Saat" />
                 <ScalarProperty Name="VergiDaire" ColumnName="VergiDaire" />
+                <ScalarProperty Name="CariID" ColumnName="CariID" />
+                <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -826,6 +864,7 @@
                 <ScalarProperty Name="Adet" ColumnName="Adet" />
                 <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
                 <ScalarProperty Name="Tutar" ColumnName="Tutar" />
+                <ScalarProperty Name="FaturaID" ColumnName="FaturaID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -863,6 +902,7 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Adi" ColumnName="Adi" />
                 <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+                <ScalarProperty Name="DepartmanID" ColumnName="DepartmanID" />
                 <ScalarProperty Name="Fotograf" ColumnName="Fotograf" />
                 <ScalarProperty Name="Mail" ColumnName="Mail" />
                 <ScalarProperty Name="Telefon" ColumnName="Telefon" />
@@ -878,6 +918,7 @@
                 <ScalarProperty Name="AlisFiyat" ColumnName="AlisFiyat" />
                 <ScalarProperty Name="SatisFiyat" ColumnName="SatisFiyat" />
                 <ScalarProperty Name="StokSayisi" ColumnName="StokSayisi" />
+                <ScalarProperty Name="KategoriID" ColumnName="KategoriID" />
                 <ScalarProperty Name="Durum" ColumnName="Durum" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -886,6 +927,9 @@
             <EntityTypeMapping TypeName="DboTeknikServisModel.Tbl_UrunHareket">
               <MappingFragment StoreEntitySet="Tbl_UrunHareket">
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+                <ScalarProperty Name="CariID" ColumnName="CariID" />
+                <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
                 <ScalarProperty Name="Tarih" ColumnName="Tarih" />
                 <ScalarProperty Name="Adet" ColumnName="Adet" />
                 <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
@@ -896,6 +940,9 @@
             <EntityTypeMapping TypeName="DboTeknikServisModel.Tbl_UrunKabul">
               <MappingFragment StoreEntitySet="Tbl_UrunKabul">
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+                <ScalarProperty Name="CariID" ColumnName="CariID" />
+                <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
                 <ScalarProperty Name="GelisTarih" ColumnName="GelisTarih" />
                 <ScalarProperty Name="CikisTarih" ColumnName="CikisTarih" />
               </MappingFragment>
@@ -905,144 +952,13 @@
             <EntityTypeMapping TypeName="DboTeknikServisModel.Tbl_UrunTakip">
               <MappingFragment StoreEntitySet="Tbl_UrunTakip">
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UrunID" ColumnName="UrunID" />
                 <ScalarProperty Name="Durum" ColumnName="Durum" />
                 <ScalarProperty Name="SonTarih" ColumnName="SonTarih" />
                 <ScalarProperty Name="TakipKod" ColumnName="TakipKod" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="FK_Tbl_FaturaBilgi_Tbl_Cari" TypeName="DboTeknikServisModel.FK_Tbl_FaturaBilgi_Tbl_Cari" StoreEntitySet="Tbl_FaturaBilgi">
-            <EndProperty Name="Tbl_Cari">
-              <ScalarProperty Name="ID" ColumnName="CariID" />
-            </EndProperty>
-            <EndProperty Name="Tbl_FaturaBilgi">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-            <Condition IsNull="false" ColumnName="CariID" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Tbl_UrunHareket_Tbl_Cari" TypeName="DboTeknikServisModel.FK_Tbl_UrunHareket_Tbl_Cari" StoreEntitySet="Tbl_UrunHareket">
-            <EndProperty Name="Tbl_Cari">
-              <ScalarProperty Name="ID" ColumnName="CariID" />
-            </EndProperty>
-            <EndProperty Name="Tbl_UrunHareket">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-            <Condition IsNull="false" ColumnName="CariID" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Tbl_UrunKabul_Tbl_Cari" TypeName="DboTeknikServisModel.FK_Tbl_UrunKabul_Tbl_Cari" StoreEntitySet="Tbl_UrunKabul">
-            <EndProperty Name="Tbl_Cari">
-              <ScalarProperty Name="ID" ColumnName="CariID" />
-            </EndProperty>
-            <EndProperty Name="Tbl_UrunKabul">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-            <Condition IsNull="false" ColumnName="CariID" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Tbl_Personel_Tbl_Departman" TypeName="DboTeknikServisModel.FK_Tbl_Personel_Tbl_Departman" StoreEntitySet="Tbl_Personel">
-            <EndProperty Name="Tbl_Departman">
-              <ScalarProperty Name="ID" ColumnName="DepartmanID" />
-            </EndProperty>
-            <EndProperty Name="Tbl_Personel">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-            <Condition IsNull="false" ColumnName="DepartmanID" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Tbl_FaturaBilgi_Tbl_Personel" TypeName="DboTeknikServisModel.FK_Tbl_FaturaBilgi_Tbl_Personel" StoreEntitySet="Tbl_FaturaBilgi">
-            <EndProperty Name="Tbl_Personel">
-              <ScalarProperty Name="ID" ColumnName="PersonelID" />
-            </EndProperty>
-            <EndProperty Name="Tbl_FaturaBilgi">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-            <Condition IsNull="false" ColumnName="PersonelID" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Tbl_FaturaDetay_Tbl_FaturaBilgi" TypeName="DboTeknikServisModel.FK_Tbl_FaturaDetay_Tbl_FaturaBilgi" StoreEntitySet="Tbl_FaturaDetay">
-            <EndProperty Name="Tbl_FaturaBilgi">
-              <ScalarProperty Name="ID" ColumnName="FaturaID" />
-            </EndProperty>
-            <EndProperty Name="Tbl_FaturaDetay">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-            <Condition IsNull="false" ColumnName="FaturaID" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Tbl_Urun_Tbl_Kategori" TypeName="DboTeknikServisModel.FK_Tbl_Urun_Tbl_Kategori" StoreEntitySet="Tbl_Urun">
-            <EndProperty Name="Tbl_Kategori">
-              <ScalarProperty Name="ID" ColumnName="KategoriID" />
-            </EndProperty>
-            <EndProperty Name="Tbl_Urun">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-            <Condition IsNull="false" ColumnName="KategoriID" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Tbl_UrunHareket_Tbl_Personel" TypeName="DboTeknikServisModel.FK_Tbl_UrunHareket_Tbl_Personel" StoreEntitySet="Tbl_UrunHareket">
-            <EndProperty Name="Tbl_Personel">
-              <ScalarProperty Name="ID" ColumnName="PersonelID" />
-            </EndProperty>
-            <EndProperty Name="Tbl_UrunHareket">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-            <Condition IsNull="false" ColumnName="PersonelID" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Tbl_UrunKabul_Tbl_Personel" TypeName="DboTeknikServisModel.FK_Tbl_UrunKabul_Tbl_Personel" StoreEntitySet="Tbl_UrunKabul">
-            <EndProperty Name="Tbl_Personel">
-              <ScalarProperty Name="ID" ColumnName="PersonelID" />
-            </EndProperty>
-            <EndProperty Name="Tbl_UrunKabul">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-            <Condition IsNull="false" ColumnName="PersonelID" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Tbl_UrunHareket_Tbl_Urun" TypeName="DboTeknikServisModel.FK_Tbl_UrunHareket_Tbl_Urun" StoreEntitySet="Tbl_UrunHareket">
-            <EndProperty Name="Tbl_Urun">
-              <ScalarProperty Name="ID" ColumnName="UrunID" />
-            </EndProperty>
-            <EndProperty Name="Tbl_UrunHareket">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-            <Condition IsNull="false" ColumnName="UrunID" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Tbl_UrunKabul_Tbl_Urun" TypeName="DboTeknikServisModel.FK_Tbl_UrunKabul_Tbl_Urun" StoreEntitySet="Tbl_UrunKabul">
-            <EndProperty Name="Tbl_Urun">
-              <ScalarProperty Name="ID" ColumnName="UrunID" />
-            </EndProperty>
-            <EndProperty Name="Tbl_UrunKabul">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-            <Condition IsNull="false" ColumnName="UrunID" />
-          </AssociationSetMapping>
-          <AssociationSetMapping Name="FK_Tbl_UrunTakip_Tbl_Urun" TypeName="DboTeknikServisModel.FK_Tbl_UrunTakip_Tbl_Urun" StoreEntitySet="Tbl_UrunTakip">
-            <EndProperty Name="Tbl_Urun">
-              <ScalarProperty Name="ID" ColumnName="UrunID" />
-            </EndProperty>
-            <EndProperty Name="Tbl_UrunTakip">
-              <ScalarProperty Name="ID" ColumnName="ID" />
-            </EndProperty>
-            <Condition IsNull="false" ColumnName="UrunID" />
-          </AssociationSetMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DboTeknikServisModel.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DboTeknikServisModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DboTeknikServisModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DboTeknikServisModel.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DboTeknikServisModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DboTeknikServisModel.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="DboTeknikServisModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DboTeknikServisModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DboTeknikServisModel.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1058,7 +974,7 @@
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

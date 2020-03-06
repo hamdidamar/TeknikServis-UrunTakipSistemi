@@ -16,7 +16,7 @@ namespace TeknikServis.Forms
         {
             InitializeComponent();
         }
-        DboTeknikServisEntities db = new DboTeknikServisEntities();
+        DboTeknikServisEntities1 db = new DboTeknikServisEntities1();
         private void FrmKategori_Load(object sender, EventArgs e)
         {
             Listele();

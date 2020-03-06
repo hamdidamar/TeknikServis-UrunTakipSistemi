@@ -19,6 +19,7 @@ namespace TeknikServis
         public Nullable<int> Adet { get; set; }
         public Nullable<decimal> Fiyat { get; set; }
         public Nullable<decimal> Tutar { get; set; }
+        public Nullable<int> FaturaID { get; set; }
     
         public virtual Tbl_FaturaBilgi Tbl_FaturaBilgi { get; set; }
     }

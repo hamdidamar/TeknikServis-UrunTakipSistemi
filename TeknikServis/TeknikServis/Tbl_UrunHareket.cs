@@ -15,6 +15,9 @@ namespace TeknikServis
     public partial class Tbl_UrunHareket
     {
         public int ID { get; set; }
+        public Nullable<int> UrunID { get; set; }
+        public Nullable<int> CariID { get; set; }
+        public Nullable<int> PersonelID { get; set; }
         public Nullable<System.DateTime> Tarih { get; set; }
         public Nullable<int> Adet { get; set; }
         public Nullable<decimal> Fiyat { get; set; }

@@ -26,6 +26,8 @@ namespace TeknikServis
         public Nullable<System.DateTime> Tarih { get; set; }
         public string Saat { get; set; }
         public string VergiDaire { get; set; }
+        public Nullable<int> CariID { get; set; }
+        public Nullable<int> PersonelID { get; set; }
     
         public virtual Tbl_Cari Tbl_Cari { get; set; }
         public virtual Tbl_Personel Tbl_Personel { get; set; }

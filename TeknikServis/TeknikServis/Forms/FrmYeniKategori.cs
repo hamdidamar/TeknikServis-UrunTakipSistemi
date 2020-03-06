@@ -21,7 +21,7 @@ namespace TeknikServis.Forms
         {
             try
             {
-                DboTeknikServisEntities db = new DboTeknikServisEntities();
+                DboTeknikServisEntities1 db = new DboTeknikServisEntities1();
                 Tbl_Kategori kategori = new Tbl_Kategori();
                 kategori.Adi = txtKategoriAd.Text;
                

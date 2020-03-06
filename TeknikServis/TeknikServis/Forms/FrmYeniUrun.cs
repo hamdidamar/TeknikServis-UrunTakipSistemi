@@ -21,11 +21,11 @@ namespace TeknikServis.Forms
         {
             try
             {
-                DboTeknikServisEntities db = new DboTeknikServisEntities();
+                DboTeknikServisEntities1 db = new DboTeknikServisEntities1();
                 Tbl_Urun urun = new Tbl_Urun();
                 urun.Adi = txtUrunAd.Text;
                 urun.Marka = txtMarka.Text;
-                urun.Tbl_Kategori.ID = int.Parse(txtKategori.Text);
+                urun.KategoriID = int.Parse(txtKategori.Text);
                 urun.AlisFiyat = decimal.Parse(txtAlisFiyat.Text);
                 urun.SatisFiyat = decimal.Parse(txtSatisFiyat.Text);
                 urun.StokSayisi = int.Parse(txtStokMiktar.Text);
@@ -43,6 +43,11 @@ namespace TeknikServis.Forms
         private void btnVazgec_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FrmYeniUrun_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

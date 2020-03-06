@@ -90,21 +90,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntityModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EntityModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EntityModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EntityModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EntityModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +107,18 @@
     </Compile>
     <Compile Include="Forms\FrmMarkaIstatislik.Designer.cs">
       <DependentUpon>FrmMarkaIstatislik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMusteriIlIstatislik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMusteriIlIstatislik.Designer.cs">
+      <DependentUpon>FrmMusteriIlIstatislik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMusteriListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMusteriListesi.Designer.cs">
+      <DependentUpon>FrmMusteriListesi.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmUrunIstatislik.cs">
       <SubType>Form</SubType>
@@ -147,58 +144,67 @@
     <Compile Include="Forms\FrmYeniUrun.Designer.cs">
       <DependentUpon>FrmYeniUrun.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModelTeknikServis.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelTeknikServis.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTeknikServis.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelTeknikServis.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTeknikServis.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelTeknikServis.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="sysdiagrams.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+      <DependentUpon>ModelTeknikServis.tt</DependentUpon>
     </Compile>
     <Compile Include="Tbl_Admin.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+      <DependentUpon>ModelTeknikServis.tt</DependentUpon>
     </Compile>
     <Compile Include="Tbl_ArizaDetay.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+      <DependentUpon>ModelTeknikServis.tt</DependentUpon>
     </Compile>
     <Compile Include="Tbl_Cari.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+      <DependentUpon>ModelTeknikServis.tt</DependentUpon>
     </Compile>
     <Compile Include="Tbl_Departman.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+      <DependentUpon>ModelTeknikServis.tt</DependentUpon>
     </Compile>
     <Compile Include="Tbl_FaturaBilgi.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+      <DependentUpon>ModelTeknikServis.tt</DependentUpon>
     </Compile>
     <Compile Include="Tbl_FaturaDetay.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+      <DependentUpon>ModelTeknikServis.tt</DependentUpon>
     </Compile>
     <Compile Include="Tbl_Gider.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+      <DependentUpon>ModelTeknikServis.tt</DependentUpon>
     </Compile>
     <Compile Include="Tbl_Kategori.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+      <DependentUpon>ModelTeknikServis.tt</DependentUpon>
     </Compile>
     <Compile Include="Tbl_Not.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+      <DependentUpon>ModelTeknikServis.tt</DependentUpon>
     </Compile>
     <Compile Include="Tbl_Personel.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+      <DependentUpon>ModelTeknikServis.tt</DependentUpon>
     </Compile>
     <Compile Include="Tbl_Urun.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+      <DependentUpon>ModelTeknikServis.tt</DependentUpon>
     </Compile>
     <Compile Include="Tbl_UrunHareket.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+      <DependentUpon>ModelTeknikServis.tt</DependentUpon>
     </Compile>
     <Compile Include="Tbl_UrunKabul.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+      <DependentUpon>ModelTeknikServis.tt</DependentUpon>
     </Compile>
     <Compile Include="Tbl_UrunTakip.cs">
-      <DependentUpon>EntityModel.tt</DependentUpon>
+      <DependentUpon>ModelTeknikServis.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -208,6 +214,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmMarkaIstatislik.resx">
       <DependentUpon>FrmMarkaIstatislik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMusteriIlIstatislik.resx">
+      <DependentUpon>FrmMusteriIlIstatislik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMusteriListesi.resx">
+      <DependentUpon>FrmMusteriListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmUrunIstatislik.resx">
       <DependentUpon>FrmUrunIstatislik.cs</DependentUpon>
@@ -231,12 +243,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="EntityModel.edmx">
+    <EntityDeploy Include="ModelTeknikServis.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EntityModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelTeknikServis.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="EntityModel.edmx.diagram">
-      <DependentUpon>EntityModel.edmx</DependentUpon>
+    <None Include="ModelTeknikServis.edmx.diagram">
+      <DependentUpon>ModelTeknikServis.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -253,19 +265,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="EntityModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EntityModel.edmx</DependentUpon>
-      <LastGenOutput>EntityModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="EntityModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EntityModel.edmx</DependentUpon>
-      <LastGenOutput>EntityModel.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="ModelTeknikServis.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelTeknikServis.edmx</DependentUpon>
+      <LastGenOutput>ModelTeknikServis.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelTeknikServis.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelTeknikServis.edmx</DependentUpon>
+      <LastGenOutput>ModelTeknikServis.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

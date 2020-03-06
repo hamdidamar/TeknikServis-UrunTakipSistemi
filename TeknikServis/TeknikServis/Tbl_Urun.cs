@@ -28,6 +28,7 @@ namespace TeknikServis
         public Nullable<decimal> AlisFiyat { get; set; }
         public Nullable<decimal> SatisFiyat { get; set; }
         public Nullable<int> StokSayisi { get; set; }
+        public Nullable<int> KategoriID { get; set; }
         public Nullable<bool> Durum { get; set; }
     
         public virtual Tbl_Kategori Tbl_Kategori { get; set; }
