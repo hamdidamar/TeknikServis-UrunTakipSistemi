@@ -276,6 +276,7 @@
             this.btnYeniMusteri.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnYeniMusteri.ImageOptions.Image")));
             this.btnYeniMusteri.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnYeniMusteri.ImageOptions.LargeImage")));
             this.btnYeniMusteri.Name = "btnYeniMusteri";
+            this.btnYeniMusteri.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnYeniMusteri_ItemClick);
             // 
             // btnMusteriListesi
             // 
@@ -374,6 +375,7 @@
             this.btnDepartmanListesi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDepartmanListesi.ImageOptions.Image")));
             this.btnDepartmanListesi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDepartmanListesi.ImageOptions.LargeImage")));
             this.btnDepartmanListesi.Name = "btnDepartmanListesi";
+            this.btnDepartmanListesi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDepartmanListesi_ItemClick);
             // 
             // btnYeniDepartman
             // 

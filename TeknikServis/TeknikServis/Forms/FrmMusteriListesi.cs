@@ -26,5 +26,10 @@ namespace TeknikServis.Forms
         {
             grdMusteriListesi.DataSource = db.Tbl_Cari.ToList();
         }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

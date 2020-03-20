@@ -76,5 +76,18 @@ namespace TeknikServis
             frmMusteriIlIstatislik.MdiParent = this;
             frmMusteriIlIstatislik.Show();
         }
+
+        private void btnYeniMusteri_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmYeniMusteri frmYeniMusteri = new Forms.FrmYeniMusteri();
+            frmYeniMusteri.Show();
+        }
+
+        private void btnDepartmanListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmDepartmanListesi frmDepartmanListesi = new Forms.FrmDepartmanListesi();
+            frmDepartmanListesi.MdiParent = this;
+            frmDepartmanListesi.Show();
+        }
     }
 }
