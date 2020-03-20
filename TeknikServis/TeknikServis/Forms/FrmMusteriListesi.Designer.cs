@@ -39,7 +39,7 @@
             this.lblIl = new DevExpress.XtraEditors.LabelControl();
             this.txtMusteriMail = new DevExpress.XtraEditors.TextEdit();
             this.lblMail = new DevExpress.XtraEditors.LabelControl();
-            this.txtVNo = new DevExpress.XtraEditors.TextEdit();
+            this.txtMusteriTelefon = new DevExpress.XtraEditors.TextEdit();
             this.lblTelefon = new DevExpress.XtraEditors.LabelControl();
             this.txtMusteriSoyad = new DevExpress.XtraEditors.TextEdit();
             this.lblSoyad = new DevExpress.XtraEditors.LabelControl();
@@ -50,10 +50,10 @@
             this.txtMusteriVNo = new DevExpress.XtraEditors.TextEdit();
             this.cmbMusteriIl = new DevExpress.XtraEditors.LookUpEdit();
             this.lblAdres = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.txtMusteriStatu = new DevExpress.XtraEditors.TextEdit();
             this.lblStatu = new DevExpress.XtraEditors.LabelControl();
             this.lblVNo = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtMusteriVDaire = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.txtMusteriBanka = new DevExpress.XtraEditors.TextEdit();
             this.lblBanka = new DevExpress.XtraEditors.LabelControl();
@@ -78,15 +78,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMusteriId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbMusteriIlce.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMusteriMail.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtVNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMusteriTelefon.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMusteriSoyad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMusteriAd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMusteriListesi)).BeginInit();
             this.gcMusteriListesi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMusteriVNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbMusteriIl.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMusteriStatu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMusteriVDaire.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMusteriBanka.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdMusteriListesi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -126,6 +126,7 @@
             this.btnGuncelle.Size = new System.Drawing.Size(323, 73);
             this.btnGuncelle.TabIndex = 15;
             this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnSil
             // 
@@ -137,6 +138,7 @@
             this.btnSil.Size = new System.Drawing.Size(323, 73);
             this.btnSil.TabIndex = 14;
             this.btnSil.Text = "Sil";
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnKaydet
             // 
@@ -194,14 +196,14 @@
             this.lblMail.TabIndex = 6;
             this.lblMail.Text = "MAIL :";
             // 
-            // txtVNo
+            // txtMusteriTelefon
             // 
-            this.txtVNo.Location = new System.Drawing.Point(102, 136);
-            this.txtVNo.Name = "txtVNo";
-            this.txtVNo.Properties.Mask.EditMask = "(999) 000-0000";
-            this.txtVNo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
-            this.txtVNo.Size = new System.Drawing.Size(150, 20);
-            this.txtVNo.TabIndex = 5;
+            this.txtMusteriTelefon.Location = new System.Drawing.Point(102, 136);
+            this.txtMusteriTelefon.Name = "txtMusteriTelefon";
+            this.txtMusteriTelefon.Properties.Mask.EditMask = "(999) 000-0000";
+            this.txtMusteriTelefon.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
+            this.txtMusteriTelefon.Size = new System.Drawing.Size(150, 20);
+            this.txtMusteriTelefon.TabIndex = 5;
             // 
             // lblTelefon
             // 
@@ -247,10 +249,10 @@
             this.gcMusteriListesi.Controls.Add(this.txtMusteriVNo);
             this.gcMusteriListesi.Controls.Add(this.cmbMusteriIl);
             this.gcMusteriListesi.Controls.Add(this.lblAdres);
-            this.gcMusteriListesi.Controls.Add(this.textEdit3);
+            this.gcMusteriListesi.Controls.Add(this.txtMusteriStatu);
             this.gcMusteriListesi.Controls.Add(this.lblStatu);
             this.gcMusteriListesi.Controls.Add(this.lblVNo);
-            this.gcMusteriListesi.Controls.Add(this.textEdit1);
+            this.gcMusteriListesi.Controls.Add(this.txtMusteriVDaire);
             this.gcMusteriListesi.Controls.Add(this.labelControl8);
             this.gcMusteriListesi.Controls.Add(this.txtMusteriBanka);
             this.gcMusteriListesi.Controls.Add(this.lblBanka);
@@ -264,7 +266,7 @@
             this.gcMusteriListesi.Controls.Add(this.lblIl);
             this.gcMusteriListesi.Controls.Add(this.txtMusteriMail);
             this.gcMusteriListesi.Controls.Add(this.lblMail);
-            this.gcMusteriListesi.Controls.Add(this.txtVNo);
+            this.gcMusteriListesi.Controls.Add(this.txtMusteriTelefon);
             this.gcMusteriListesi.Controls.Add(this.lblTelefon);
             this.gcMusteriListesi.Controls.Add(this.txtMusteriSoyad);
             this.gcMusteriListesi.Controls.Add(this.lblSoyad);
@@ -312,12 +314,12 @@
             this.lblAdres.Text = "ADRES :";
             this.lblAdres.Visible = false;
             // 
-            // textEdit3
+            // txtMusteriStatu
             // 
-            this.textEdit3.Location = new System.Drawing.Point(338, 105);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(150, 20);
-            this.textEdit3.TabIndex = 9;
+            this.txtMusteriStatu.Location = new System.Drawing.Point(338, 105);
+            this.txtMusteriStatu.Name = "txtMusteriStatu";
+            this.txtMusteriStatu.Size = new System.Drawing.Size(150, 20);
+            this.txtMusteriStatu.TabIndex = 9;
             // 
             // lblStatu
             // 
@@ -336,12 +338,12 @@
             this.lblVNo.Text = "VERGİ NO :";
             this.lblVNo.Visible = false;
             // 
-            // textEdit1
+            // txtMusteriVDaire
             // 
-            this.textEdit1.Location = new System.Drawing.Point(338, 202);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(150, 20);
-            this.textEdit1.TabIndex = 11;
+            this.txtMusteriVDaire.Location = new System.Drawing.Point(338, 202);
+            this.txtMusteriVDaire.Name = "txtMusteriVDaire";
+            this.txtMusteriVDaire.Size = new System.Drawing.Size(150, 20);
+            this.txtMusteriVDaire.TabIndex = 11;
             // 
             // labelControl8
             // 
@@ -384,6 +386,7 @@
             this.gridView1.GridControl = this.grdMusteriListesi;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // panel1
             // 
@@ -594,7 +597,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMusteriId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbMusteriIlce.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMusteriMail.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtVNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMusteriTelefon.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMusteriSoyad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMusteriAd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcMusteriListesi)).EndInit();
@@ -602,8 +605,8 @@
             this.gcMusteriListesi.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMusteriVNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbMusteriIl.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMusteriStatu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMusteriVDaire.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMusteriBanka.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdMusteriListesi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -635,7 +638,7 @@
         private DevExpress.XtraEditors.LabelControl lblIl;
         private DevExpress.XtraEditors.TextEdit txtMusteriMail;
         private DevExpress.XtraEditors.LabelControl lblMail;
-        private DevExpress.XtraEditors.TextEdit txtVNo;
+        private DevExpress.XtraEditors.TextEdit txtMusteriTelefon;
         private DevExpress.XtraEditors.LabelControl lblTelefon;
         private DevExpress.XtraEditors.TextEdit txtMusteriSoyad;
         private DevExpress.XtraEditors.LabelControl lblSoyad;
@@ -646,14 +649,14 @@
         private DevExpress.XtraEditors.TextEdit txtMusteriVNo;
         private DevExpress.XtraEditors.LookUpEdit cmbMusteriIl;
         private DevExpress.XtraEditors.LabelControl lblAdres;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.TextEdit txtMusteriStatu;
         private DevExpress.XtraEditors.LabelControl lblStatu;
         private DevExpress.XtraEditors.LabelControl lblVNo;
         private DevExpress.XtraEditors.TextEdit txtMusteriBanka;
         private DevExpress.XtraEditors.LabelControl lblBanka;
         private DevExpress.XtraGrid.GridControl grdMusteriListesi;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtMusteriVDaire;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;

@@ -103,11 +103,11 @@
             this.labelControl6.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl6.Appearance.Options.UseFont = true;
             this.labelControl6.Appearance.Options.UseForeColor = true;
-            this.labelControl6.Location = new System.Drawing.Point(17, 52);
+            this.labelControl6.Location = new System.Drawing.Point(26, 52);
             this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(81, 32);
+            this.labelControl6.Size = new System.Drawing.Size(78, 32);
             this.labelControl6.TabIndex = 1;
-            this.labelControl6.Text = "HATAY";
+            this.labelControl6.Text = "Stajyer";
             // 
             // labelControl7
             // 
@@ -129,6 +129,7 @@
             this.gridView1.GridControl = this.grdDepartmanListesi;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // grdDepartmanListesi
             // 
@@ -166,15 +167,15 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl4.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Appearance.Options.UseForeColor = true;
             this.labelControl4.Location = new System.Drawing.Point(17, 52);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(20, 47);
+            this.labelControl4.Size = new System.Drawing.Size(146, 25);
             this.labelControl4.TabIndex = 1;
-            this.labelControl4.Text = "9";
+            this.labelControl4.Text = "İnsan Kaynakları";
             // 
             // labelControl5
             // 
@@ -342,6 +343,7 @@
             this.btnGuncelle.Size = new System.Drawing.Size(323, 73);
             this.btnGuncelle.TabIndex = 15;
             this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnSil
             // 
@@ -353,6 +355,7 @@
             this.btnSil.Size = new System.Drawing.Size(323, 73);
             this.btnSil.TabIndex = 14;
             this.btnSil.Text = "Sil";
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnKaydet
             // 
@@ -364,6 +367,7 @@
             this.btnKaydet.Size = new System.Drawing.Size(323, 73);
             this.btnKaydet.TabIndex = 13;
             this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // lblAd
             // 
