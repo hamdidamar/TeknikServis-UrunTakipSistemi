@@ -102,6 +102,12 @@
     <Compile Include="Forms\FrmDepartmanListesi.Designer.cs">
       <DependentUpon>FrmDepartmanListesi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmDovizKurlari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDovizKurlari.Designer.cs">
+      <DependentUpon>FrmDovizKurlari.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmKategori.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,12 @@
     </Compile>
     <Compile Include="Forms\FrmMusteriListesi.Designer.cs">
       <DependentUpon>FrmMusteriListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmNotlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmNotlar.Designer.cs">
+      <DependentUpon>FrmNotlar.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmPersonelListesi.cs">
       <SubType>Form</SubType>
@@ -167,6 +179,12 @@
     </Compile>
     <Compile Include="Forms\FrmYeniUrun.Designer.cs">
       <DependentUpon>FrmYeniUrun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmYouTube.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmYouTube.Designer.cs">
+      <DependentUpon>FrmYouTube.cs</DependentUpon>
     </Compile>
     <Compile Include="ModelTeknikServis.Context.cs">
       <AutoGen>True</AutoGen>
@@ -236,6 +254,9 @@
     <EmbeddedResource Include="Forms\FrmDepartmanListesi.resx">
       <DependentUpon>FrmDepartmanListesi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmDovizKurlari.resx">
+      <DependentUpon>FrmDovizKurlari.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmKategori.resx">
       <DependentUpon>FrmKategori.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmMusteriListesi.resx">
       <DependentUpon>FrmMusteriListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmNotlar.resx">
+      <DependentUpon>FrmNotlar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmPersonelListesi.resx">
       <DependentUpon>FrmPersonelListesi.cs</DependentUpon>
@@ -268,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmYeniUrun.resx">
       <DependentUpon>FrmYeniUrun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmYouTube.resx">
+      <DependentUpon>FrmYouTube.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

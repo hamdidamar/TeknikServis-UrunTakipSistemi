@@ -60,7 +60,7 @@
             this.btnHesapMakinesi = new DevExpress.XtraBars.BarButtonItem();
             this.btnYeniNot = new DevExpress.XtraBars.BarButtonItem();
             this.btnDovizKurlari = new DevExpress.XtraBars.BarButtonItem();
-            this.btnHaberler = new DevExpress.XtraBars.BarButtonItem();
+            this.btnYouTube = new DevExpress.XtraBars.BarButtonItem();
             this.btnDovizIslemleri = new DevExpress.XtraBars.BarButtonItem();
             this.btnWord = new DevExpress.XtraBars.BarButtonItem();
             this.btnExcel = new DevExpress.XtraBars.BarButtonItem();
@@ -104,6 +104,7 @@
             this.ribbonPage9 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPage10 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.btnAjanda = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -142,7 +143,7 @@
             this.btnHesapMakinesi,
             this.btnYeniNot,
             this.btnDovizKurlari,
-            this.btnHaberler,
+            this.btnYouTube,
             this.btnDovizIslemleri,
             this.btnWord,
             this.btnExcel,
@@ -151,9 +152,10 @@
             this.btnMailKutusu,
             this.btnYeniMail,
             this.btnSmsGonder,
-            this.btnKartlar});
+            this.btnKartlar,
+            this.btnAjanda});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 40;
+            this.ribbonControl1.MaxItemId = 41;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbnAnaSayfa,
@@ -392,6 +394,7 @@
             this.btnHesapMakinesi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHesapMakinesi.ImageOptions.Image")));
             this.btnHesapMakinesi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHesapMakinesi.ImageOptions.LargeImage")));
             this.btnHesapMakinesi.Name = "btnHesapMakinesi";
+            this.btnHesapMakinesi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHesapMakinesi_ItemClick);
             // 
             // btnYeniNot
             // 
@@ -408,14 +411,16 @@
             this.btnDovizKurlari.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDovizKurlari.ImageOptions.Image")));
             this.btnDovizKurlari.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDovizKurlari.ImageOptions.LargeImage")));
             this.btnDovizKurlari.Name = "btnDovizKurlari";
+            this.btnDovizKurlari.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDovizKurlari_ItemClick);
             // 
-            // btnHaberler
+            // btnYouTube
             // 
-            this.btnHaberler.Caption = "Haberler";
-            this.btnHaberler.Id = 30;
-            this.btnHaberler.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHaberler.ImageOptions.Image")));
-            this.btnHaberler.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHaberler.ImageOptions.LargeImage")));
-            this.btnHaberler.Name = "btnHaberler";
+            this.btnYouTube.Caption = "YouTube";
+            this.btnYouTube.Id = 30;
+            this.btnYouTube.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnYouTube.ImageOptions.Image")));
+            this.btnYouTube.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnYouTube.ImageOptions.LargeImage")));
+            this.btnYouTube.Name = "btnYouTube";
+            this.btnYouTube.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnYouTube_ItemClick);
             // 
             // btnDovizIslemleri
             // 
@@ -432,6 +437,7 @@
             this.btnWord.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnWord.ImageOptions.Image")));
             this.btnWord.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnWord.ImageOptions.LargeImage")));
             this.btnWord.Name = "btnWord";
+            this.btnWord.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnWord_ItemClick);
             // 
             // btnExcel
             // 
@@ -440,6 +446,7 @@
             this.btnExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.ImageOptions.Image")));
             this.btnExcel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnExcel.ImageOptions.LargeImage")));
             this.btnExcel.Name = "btnExcel";
+            this.btnExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExcel_ItemClick);
             // 
             // btnYardim
             // 
@@ -621,9 +628,10 @@
             // ribbonPageGroup7
             // 
             this.ribbonPageGroup7.ItemLinks.Add(this.btnHesapMakinesi);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnAjanda);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnYeniNot);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnDovizKurlari);
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnHaberler);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnYouTube);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnDovizIslemleri);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnWord);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnExcel);
@@ -721,6 +729,15 @@
             this.ribbonPage10.Name = "ribbonPage10";
             this.ribbonPage10.Text = "ribbonPage10";
             // 
+            // btnAjanda
+            // 
+            this.btnAjanda.Caption = "Ajanda";
+            this.btnAjanda.Id = 40;
+            this.btnAjanda.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNotListesi.ImageOptions.Image")));
+            this.btnAjanda.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNotListesi.ImageOptions.LargeImage")));
+            this.btnAjanda.Name = "btnAjanda";
+            this.btnAjanda.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAjanda_ItemClick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -801,7 +818,7 @@
         private DevExpress.XtraBars.BarButtonItem btnHesapMakinesi;
         private DevExpress.XtraBars.BarButtonItem btnYeniNot;
         private DevExpress.XtraBars.BarButtonItem btnDovizKurlari;
-        private DevExpress.XtraBars.BarButtonItem btnHaberler;
+        private DevExpress.XtraBars.BarButtonItem btnYouTube;
         private DevExpress.XtraBars.BarButtonItem btnDovizIslemleri;
         private DevExpress.XtraBars.BarButtonItem btnWord;
         private DevExpress.XtraBars.BarButtonItem btnExcel;
@@ -815,5 +832,6 @@
         private DevExpress.XtraBars.BarButtonItem btnYeniMail;
         private DevExpress.XtraBars.BarButtonItem btnSmsGonder;
         private DevExpress.XtraBars.BarButtonItem btnKartlar;
+        private DevExpress.XtraBars.BarButtonItem btnAjanda;
     }
 }

@@ -96,5 +96,41 @@ namespace TeknikServis
             frmPersonelListesi.MdiParent = this;
             frmPersonelListesi.Show();
         }
+
+        private void btnHesapMakinesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            System.Diagnostics.Process.Start("Calc.exe");
+        }
+
+        private void btnDovizKurlari_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmDovizKurlari frmDovizKurlari = new Forms.FrmDovizKurlari();
+            frmDovizKurlari.MdiParent = this;
+            frmDovizKurlari.Show();
+        }
+
+        private void btnWord_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            System.Diagnostics.Process.Start("winword");
+        }
+
+        private void btnExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            System.Diagnostics.Process.Start("excel");
+        }
+
+        private void btnYouTube_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmYouTube frmYouTube = new Forms.FrmYouTube();
+            frmYouTube.MdiParent = this;
+            frmYouTube.Show();
+        }
+
+        private void btnAjanda_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmNotlar frmNotlar = new Forms.FrmNotlar();
+            frmNotlar.MdiParent = this;
+            frmNotlar.Show();
+        }
     }
 }
