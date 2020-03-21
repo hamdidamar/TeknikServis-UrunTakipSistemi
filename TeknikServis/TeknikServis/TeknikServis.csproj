@@ -126,6 +126,12 @@
     <Compile Include="Forms\FrmMusteriListesi.Designer.cs">
       <DependentUpon>FrmMusteriListesi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmPersonelListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPersonelListesi.Designer.cs">
+      <DependentUpon>FrmPersonelListesi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmUrunIstatislik.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmMusteriListesi.resx">
       <DependentUpon>FrmMusteriListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPersonelListesi.resx">
+      <DependentUpon>FrmPersonelListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmUrunIstatislik.resx">
       <DependentUpon>FrmUrunIstatislik.cs</DependentUpon>

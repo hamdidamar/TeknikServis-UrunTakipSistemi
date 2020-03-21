@@ -89,5 +89,12 @@ namespace TeknikServis
             frmDepartmanListesi.MdiParent = this;
             frmDepartmanListesi.Show();
         }
+
+        private void btnPersonelListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmPersonelListesi frmPersonelListesi = new Forms.FrmPersonelListesi();
+            frmPersonelListesi.MdiParent = this;
+            frmPersonelListesi.Show();
+        }
     }
 }

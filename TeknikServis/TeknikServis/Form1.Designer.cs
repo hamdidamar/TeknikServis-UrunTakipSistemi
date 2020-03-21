@@ -359,6 +359,7 @@
             this.btnPersonelListesi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPersonelListesi.ImageOptions.Image")));
             this.btnPersonelListesi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPersonelListesi.ImageOptions.LargeImage")));
             this.btnPersonelListesi.Name = "btnPersonelListesi";
+            this.btnPersonelListesi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPersonelListesi_ItemClick);
             // 
             // btnYeniPersonel
             // 
