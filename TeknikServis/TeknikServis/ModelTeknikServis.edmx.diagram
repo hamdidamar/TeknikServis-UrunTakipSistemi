@@ -30,8 +30,6 @@
         <AssociationConnector Association="DboTeknikServisModel.FK_Tbl_UrunHareket_Tbl_Personel" ManuallyRouted="false" />
         <AssociationConnector Association="DboTeknikServisModel.FK_Tbl_UrunKabul_Tbl_Personel" ManuallyRouted="false" />
         <AssociationConnector Association="DboTeknikServisModel.FK_Tbl_UrunHareket_Tbl_Urun" ManuallyRouted="false" />
-        <AssociationConnector Association="DboTeknikServisModel.FK_Tbl_UrunKabul_Tbl_Urun" ManuallyRouted="false" />
-        <AssociationConnector Association="DboTeknikServisModel.FK_Tbl_UrunTakip_Tbl_Urun" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -96,6 +96,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmArizaDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmArizaDetay.Designer.cs">
+      <DependentUpon>FrmArizaDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmArizaDetayListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmArizaDetayListesi.Designer.cs">
+      <DependentUpon>FrmArizaDetayListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmArizaListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmArizaListesi.Designer.cs">
+      <DependentUpon>FrmArizaListesi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmDepartmanListesi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +162,12 @@
     <Compile Include="Forms\FrmPersonelListesi.Designer.cs">
       <DependentUpon>FrmPersonelListesi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmSatisListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSatisListesi.Designer.cs">
+      <DependentUpon>FrmSatisListesi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmUrunIstatislik.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +179,18 @@
     </Compile>
     <Compile Include="Forms\FrmUrunListesi.Designer.cs">
       <DependentUpon>FrmUrunListesi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmUrunSatis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmUrunSatis.Designer.cs">
+      <DependentUpon>FrmUrunSatis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmYeniArizaliUrun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmYeniArizaliUrun.Designer.cs">
+      <DependentUpon>FrmYeniArizaliUrun.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmYeniDepartman.cs">
       <SubType>Form</SubType>
@@ -251,6 +287,15 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmArizaDetay.resx">
+      <DependentUpon>FrmArizaDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmArizaDetayListesi.resx">
+      <DependentUpon>FrmArizaDetayListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmArizaListesi.resx">
+      <DependentUpon>FrmArizaListesi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmDepartmanListesi.resx">
       <DependentUpon>FrmDepartmanListesi.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,11 +320,20 @@
     <EmbeddedResource Include="Forms\FrmPersonelListesi.resx">
       <DependentUpon>FrmPersonelListesi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSatisListesi.resx">
+      <DependentUpon>FrmSatisListesi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmUrunIstatislik.resx">
       <DependentUpon>FrmUrunIstatislik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmUrunListesi.resx">
       <DependentUpon>FrmUrunListesi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmUrunSatis.resx">
+      <DependentUpon>FrmUrunSatis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmYeniArizaliUrun.resx">
+      <DependentUpon>FrmYeniArizaliUrun.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmYeniDepartman.resx">
       <DependentUpon>FrmYeniDepartman.cs</DependentUpon>

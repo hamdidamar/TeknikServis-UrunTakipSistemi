@@ -15,11 +15,8 @@ namespace TeknikServis
     public partial class Tbl_UrunTakip
     {
         public int ID { get; set; }
-        public Nullable<int> UrunID { get; set; }
         public string Durum { get; set; }
-        public Nullable<int> SonTarih { get; set; }
-        public string TakipKod { get; set; }
-    
-        public virtual Tbl_Urun Tbl_Urun { get; set; }
+        public Nullable<System.DateTime> SonTarih { get; set; }
+        public string SeriNo { get; set; }
     }
 }

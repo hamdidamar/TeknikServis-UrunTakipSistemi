@@ -15,14 +15,13 @@ namespace TeknikServis
     public partial class Tbl_UrunKabul
     {
         public int ID { get; set; }
-        public Nullable<int> UrunID { get; set; }
         public Nullable<int> CariID { get; set; }
         public Nullable<int> PersonelID { get; set; }
         public Nullable<System.DateTime> GelisTarih { get; set; }
         public Nullable<System.DateTime> CikisTarih { get; set; }
+        public string UrunSeriNo { get; set; }
     
         public virtual Tbl_Cari Tbl_Cari { get; set; }
         public virtual Tbl_Personel Tbl_Personel { get; set; }
-        public virtual Tbl_Urun Tbl_Urun { get; set; }
     }
 }

@@ -21,6 +21,7 @@ namespace TeknikServis
         public Nullable<System.DateTime> Tarih { get; set; }
         public Nullable<int> Adet { get; set; }
         public Nullable<decimal> Fiyat { get; set; }
+        public string UrunSeriNo { get; set; }
     
         public virtual Tbl_Cari Tbl_Cari { get; set; }
         public virtual Tbl_Personel Tbl_Personel { get; set; }

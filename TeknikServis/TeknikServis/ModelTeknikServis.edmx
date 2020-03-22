@@ -145,27 +145,27 @@
           <Property Name="Tarih" Type="smalldatetime" />
           <Property Name="Adet" Type="int" />
           <Property Name="Fiyat" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="UrunSeriNo" Type="char" MaxLength="10" />
         </EntityType>
         <EntityType Name="Tbl_UrunKabul">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UrunID" Type="int" />
           <Property Name="CariID" Type="int" />
           <Property Name="PersonelID" Type="int" />
           <Property Name="GelisTarih" Type="smalldatetime" />
           <Property Name="CikisTarih" Type="smalldatetime" />
+          <Property Name="UrunSeriNo" Type="char" MaxLength="10" />
         </EntityType>
         <EntityType Name="Tbl_UrunTakip">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UrunID" Type="int" />
           <Property Name="Durum" Type="nvarchar(max)" />
-          <Property Name="SonTarih" Type="int" />
-          <Property Name="TakipKod" Type="nvarchar" MaxLength="15" />
+          <Property Name="SonTarih" Type="datetime" />
+          <Property Name="SeriNo" Type="char" MaxLength="10" />
         </EntityType>
         <Association Name="FK_Tbl_FaturaBilgi_Tbl_Cari">
           <End Role="Tbl_Cari" Type="Self.Tbl_Cari" Multiplicity="0..1" />
@@ -287,30 +287,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Tbl_UrunKabul_Tbl_Urun">
-          <End Role="Tbl_Urun" Type="Self.Tbl_Urun" Multiplicity="0..1" />
-          <End Role="Tbl_UrunKabul" Type="Self.Tbl_UrunKabul" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tbl_Urun">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Tbl_UrunKabul">
-              <PropertyRef Name="UrunID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Tbl_UrunTakip_Tbl_Urun">
-          <End Role="Tbl_Urun" Type="Self.Tbl_Urun" Multiplicity="0..1" />
-          <End Role="Tbl_UrunTakip" Type="Self.Tbl_UrunTakip" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tbl_Urun">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Tbl_UrunTakip">
-              <PropertyRef Name="UrunID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="DboTeknikServisModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Admin" EntityType="Self.Tbl_Admin" Schema="dbo" store:Type="Tables" />
@@ -366,14 +342,6 @@
           <AssociationSet Name="FK_Tbl_UrunKabul_Tbl_Personel" Association="Self.FK_Tbl_UrunKabul_Tbl_Personel">
             <End Role="Tbl_Personel" EntitySet="Tbl_Personel" />
             <End Role="Tbl_UrunKabul" EntitySet="Tbl_UrunKabul" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Tbl_UrunKabul_Tbl_Urun" Association="Self.FK_Tbl_UrunKabul_Tbl_Urun">
-            <End Role="Tbl_Urun" EntitySet="Tbl_Urun" />
-            <End Role="Tbl_UrunKabul" EntitySet="Tbl_UrunKabul" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Tbl_UrunTakip_Tbl_Urun" Association="Self.FK_Tbl_UrunTakip_Tbl_Urun">
-            <End Role="Tbl_Urun" EntitySet="Tbl_Urun" />
-            <End Role="Tbl_UrunTakip" EntitySet="Tbl_UrunTakip" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -523,8 +491,6 @@
           <Property Name="Durum" Type="Boolean" />
           <NavigationProperty Name="Tbl_Kategori" Relationship="Self.FK_Tbl_Urun_Tbl_Kategori" FromRole="Tbl_Urun" ToRole="Tbl_Kategori" />
           <NavigationProperty Name="Tbl_UrunHareket" Relationship="Self.FK_Tbl_UrunHareket_Tbl_Urun" FromRole="Tbl_Urun" ToRole="Tbl_UrunHareket" />
-          <NavigationProperty Name="Tbl_UrunKabul" Relationship="Self.FK_Tbl_UrunKabul_Tbl_Urun" FromRole="Tbl_Urun" ToRole="Tbl_UrunKabul" />
-          <NavigationProperty Name="Tbl_UrunTakip" Relationship="Self.FK_Tbl_UrunTakip_Tbl_Urun" FromRole="Tbl_Urun" ToRole="Tbl_UrunTakip" />
         </EntityType>
         <EntityType Name="Tbl_UrunHareket">
           <Key>
@@ -540,31 +506,29 @@
           <NavigationProperty Name="Tbl_Cari" Relationship="Self.FK_Tbl_UrunHareket_Tbl_Cari" FromRole="Tbl_UrunHareket" ToRole="Tbl_Cari" />
           <NavigationProperty Name="Tbl_Personel" Relationship="Self.FK_Tbl_UrunHareket_Tbl_Personel" FromRole="Tbl_UrunHareket" ToRole="Tbl_Personel" />
           <NavigationProperty Name="Tbl_Urun" Relationship="Self.FK_Tbl_UrunHareket_Tbl_Urun" FromRole="Tbl_UrunHareket" ToRole="Tbl_Urun" />
+          <Property Name="UrunSeriNo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
         </EntityType>
         <EntityType Name="Tbl_UrunKabul">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UrunID" Type="Int32" />
           <Property Name="CariID" Type="Int32" />
           <Property Name="PersonelID" Type="Int32" />
           <Property Name="GelisTarih" Type="DateTime" Precision="0" />
           <Property Name="CikisTarih" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Tbl_Cari" Relationship="Self.FK_Tbl_UrunKabul_Tbl_Cari" FromRole="Tbl_UrunKabul" ToRole="Tbl_Cari" />
           <NavigationProperty Name="Tbl_Personel" Relationship="Self.FK_Tbl_UrunKabul_Tbl_Personel" FromRole="Tbl_UrunKabul" ToRole="Tbl_Personel" />
-          <NavigationProperty Name="Tbl_Urun" Relationship="Self.FK_Tbl_UrunKabul_Tbl_Urun" FromRole="Tbl_UrunKabul" ToRole="Tbl_Urun" />
+          <Property Name="UrunSeriNo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
         </EntityType>
         <EntityType Name="Tbl_UrunTakip">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UrunID" Type="Int32" />
           <Property Name="Durum" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="SonTarih" Type="Int32" />
-          <Property Name="TakipKod" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Tbl_Urun" Relationship="Self.FK_Tbl_UrunTakip_Tbl_Urun" FromRole="Tbl_UrunTakip" ToRole="Tbl_Urun" />
+          <Property Name="SonTarih" Type="DateTime" />
+          <Property Name="SeriNo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
         </EntityType>
         <Association Name="FK_Tbl_FaturaBilgi_Tbl_Cari">
           <End Role="Tbl_Cari" Type="Self.Tbl_Cari" Multiplicity="0..1" />
@@ -686,30 +650,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Tbl_UrunKabul_Tbl_Urun">
-          <End Role="Tbl_Urun" Type="Self.Tbl_Urun" Multiplicity="0..1" />
-          <End Role="Tbl_UrunKabul" Type="Self.Tbl_UrunKabul" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tbl_Urun">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Tbl_UrunKabul">
-              <PropertyRef Name="UrunID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Tbl_UrunTakip_Tbl_Urun">
-          <End Role="Tbl_Urun" Type="Self.Tbl_Urun" Multiplicity="0..1" />
-          <End Role="Tbl_UrunTakip" Type="Self.Tbl_UrunTakip" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tbl_Urun">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Tbl_UrunTakip">
-              <PropertyRef Name="UrunID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="DboTeknikServisEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Tbl_Admin" EntityType="Self.Tbl_Admin" />
@@ -765,14 +705,6 @@
           <AssociationSet Name="FK_Tbl_UrunHareket_Tbl_Urun" Association="Self.FK_Tbl_UrunHareket_Tbl_Urun">
             <End Role="Tbl_Urun" EntitySet="Tbl_Urun" />
             <End Role="Tbl_UrunHareket" EntitySet="Tbl_UrunHareket" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Tbl_UrunKabul_Tbl_Urun" Association="Self.FK_Tbl_UrunKabul_Tbl_Urun">
-            <End Role="Tbl_Urun" EntitySet="Tbl_Urun" />
-            <End Role="Tbl_UrunKabul" EntitySet="Tbl_UrunKabul" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Tbl_UrunTakip_Tbl_Urun" Association="Self.FK_Tbl_UrunTakip_Tbl_Urun">
-            <End Role="Tbl_Urun" EntitySet="Tbl_Urun" />
-            <End Role="Tbl_UrunTakip" EntitySet="Tbl_UrunTakip" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -925,6 +857,7 @@
           <EntitySetMapping Name="Tbl_UrunHareket">
             <EntityTypeMapping TypeName="DboTeknikServisModel.Tbl_UrunHareket">
               <MappingFragment StoreEntitySet="Tbl_UrunHareket">
+                <ScalarProperty Name="UrunSeriNo" ColumnName="UrunSeriNo" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="UrunID" ColumnName="UrunID" />
                 <ScalarProperty Name="CariID" ColumnName="CariID" />
@@ -938,8 +871,8 @@
           <EntitySetMapping Name="Tbl_UrunKabul">
             <EntityTypeMapping TypeName="DboTeknikServisModel.Tbl_UrunKabul">
               <MappingFragment StoreEntitySet="Tbl_UrunKabul">
+                <ScalarProperty Name="UrunSeriNo" ColumnName="UrunSeriNo" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="UrunID" ColumnName="UrunID" />
                 <ScalarProperty Name="CariID" ColumnName="CariID" />
                 <ScalarProperty Name="PersonelID" ColumnName="PersonelID" />
                 <ScalarProperty Name="GelisTarih" ColumnName="GelisTarih" />
@@ -950,11 +883,10 @@
           <EntitySetMapping Name="Tbl_UrunTakip">
             <EntityTypeMapping TypeName="DboTeknikServisModel.Tbl_UrunTakip">
               <MappingFragment StoreEntitySet="Tbl_UrunTakip">
+                <ScalarProperty Name="SeriNo" ColumnName="SeriNo" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="UrunID" ColumnName="UrunID" />
                 <ScalarProperty Name="Durum" ColumnName="Durum" />
                 <ScalarProperty Name="SonTarih" ColumnName="SonTarih" />
-                <ScalarProperty Name="TakipKod" ColumnName="TakipKod" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

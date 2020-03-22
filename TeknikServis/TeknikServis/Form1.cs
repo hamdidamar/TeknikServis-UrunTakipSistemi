@@ -132,5 +132,44 @@ namespace TeknikServis
             frmNotlar.MdiParent = this;
             frmNotlar.Show();
         }
+
+        private void btnArizaliUrunListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmArizaListesi frmArizaListesi = new Forms.FrmArizaListesi();
+            frmArizaListesi.MdiParent = this;
+            frmArizaListesi.Show();
+        }
+
+        private void btnYeniUrunSatisi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmUrunSatis frmUrunSatis = new Forms.FrmUrunSatis();
+            frmUrunSatis.Show();
+        }
+
+        private void btnSatisListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmSatisListesi frmSatisListesi = new Forms.FrmSatisListesi();
+            frmSatisListesi.MdiParent = this;
+            frmSatisListesi.Show();
+        }
+
+        private void btnYeniArizaliUrunKaydi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmYeniArizaliUrun frmYeniArizaliUrun = new Forms.FrmYeniArizaliUrun();
+            frmYeniArizaliUrun.Show();
+        }
+
+        private void btnArizaliUrunAciklamasi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmArizaDetay frmArizaDetay = new Forms.FrmArizaDetay();
+            frmArizaDetay.Show();
+        }
+
+        private void btnArizaliUrunDetaylari_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmArizaDetayListesi frmArizaDetayListesi = new Forms.FrmArizaDetayListesi();
+            frmArizaDetayListesi.MdiParent = this;
+            frmArizaDetayListesi.Show();
+        }
     }
 }
