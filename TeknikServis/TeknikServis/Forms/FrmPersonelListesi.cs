@@ -86,7 +86,7 @@ namespace TeknikServis.Forms
             p.Mail = txtPersonelMail.Text;
             p.Telefon = txtPersonelTelefon.Text;
             p.Fotograf = txtPersonelTelefon.Text;
-            //Departman Eklenecek
+            p.DepartmanID = int.Parse(cmbPersonelDepartman.EditValue.ToString());
 
             db.Tbl_Personel.Add(p);
             db.SaveChanges();
@@ -113,7 +113,7 @@ namespace TeknikServis.Forms
             deger.Mail = txtPersonelMail.Text;
             deger.Telefon = txtPersonelTelefon.Text;
             deger.Fotograf = txtPersonelFoto.Text;
-            //Departman Eklenecek
+            deger.DepartmanID = int.Parse(cmbPersonelDepartman.EditValue.ToString());
             db.SaveChanges();
             MessageBox.Show("Personel Güncelleme İşlemi Başarılı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Listele();

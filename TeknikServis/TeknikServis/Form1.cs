@@ -171,5 +171,26 @@ namespace TeknikServis
             frmArizaDetayListesi.MdiParent = this;
             frmArizaDetayListesi.Show();
         }
+
+        private void btnQrKodOlustur_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmQRCode frmQRCode = new Forms.FrmQRCode();
+            frmQRCode.Show();
+
+        }
+
+        private void btnFaturaListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmFaturaListesi frmFaturaListesi = new Forms.FrmFaturaListesi();
+            frmFaturaListesi.MdiParent = this;
+            frmFaturaListesi.Show();
+        }
+
+        private void btnFaturayaKalemGirisi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmFaturaDetay frmFaturaDetay = new Forms.FrmFaturaDetay();
+            frmFaturaDetay.MdiParent = this;
+            frmFaturaDetay.Show();
+        }
     }
 }

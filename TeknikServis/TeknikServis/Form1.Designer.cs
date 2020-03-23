@@ -74,6 +74,7 @@
             this.btnYeniUrunSatisi = new DevExpress.XtraBars.BarButtonItem();
             this.btnSatisListesi = new DevExpress.XtraBars.BarButtonItem();
             this.btnArizaliUrunDetaylari = new DevExpress.XtraBars.BarButtonItem();
+            this.btnFaturaListesi = new DevExpress.XtraBars.BarButtonItem();
             this.rbnAnaSayfa = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbnUrunler = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -160,9 +161,10 @@
             this.btnAjanda,
             this.btnYeniUrunSatisi,
             this.btnSatisListesi,
-            this.btnArizaliUrunDetaylari});
+            this.btnArizaliUrunDetaylari,
+            this.btnFaturaListesi});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 44;
+            this.ribbonControl1.MaxItemId = 45;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbnAnaSayfa,
@@ -272,6 +274,7 @@
             this.btnQrKodOlustur.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnQrKodOlustur.ImageOptions.Image")));
             this.btnQrKodOlustur.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnQrKodOlustur.ImageOptions.LargeImage")));
             this.btnQrKodOlustur.Name = "btnQrKodOlustur";
+            this.btnQrKodOlustur.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQrKodOlustur_ItemClick);
             // 
             // btnBarkodOlustur
             // 
@@ -339,6 +342,7 @@
             this.btnFaturayaKalemGirisi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnFaturayaKalemGirisi.ImageOptions.Image")));
             this.btnFaturayaKalemGirisi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnFaturayaKalemGirisi.ImageOptions.LargeImage")));
             this.btnFaturayaKalemGirisi.Name = "btnFaturayaKalemGirisi";
+            this.btnFaturayaKalemGirisi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnFaturayaKalemGirisi_ItemClick);
             // 
             // btnDetaylıFaturaSorgulama
             // 
@@ -540,6 +544,15 @@
             this.btnArizaliUrunDetaylari.Name = "btnArizaliUrunDetaylari";
             this.btnArizaliUrunDetaylari.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnArizaliUrunDetaylari_ItemClick);
             // 
+            // btnFaturaListesi
+            // 
+            this.btnFaturaListesi.Caption = "Fatura Listesi";
+            this.btnFaturaListesi.Id = 44;
+            this.btnFaturaListesi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnFaturaListesi.ImageOptions.Image")));
+            this.btnFaturaListesi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnFaturaListesi.ImageOptions.LargeImage")));
+            this.btnFaturaListesi.Name = "btnFaturaListesi";
+            this.btnFaturaListesi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnFaturaListesi_ItemClick);
+            // 
             // rbnAnaSayfa
             // 
             this.rbnAnaSayfa.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -663,6 +676,7 @@
             // 
             // ribbonPageGroup14
             // 
+            this.ribbonPageGroup14.ItemLinks.Add(this.btnFaturaListesi);
             this.ribbonPageGroup14.ItemLinks.Add(this.btnYeniFaturaGirisi);
             this.ribbonPageGroup14.ItemLinks.Add(this.btnFaturayaKalemGirisi);
             this.ribbonPageGroup14.ItemLinks.Add(this.btnDetaylıFaturaSorgulama);
@@ -881,5 +895,6 @@
         private DevExpress.XtraBars.BarButtonItem btnSatisListesi;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup16;
         private DevExpress.XtraBars.BarButtonItem btnArizaliUrunDetaylari;
+        private DevExpress.XtraBars.BarButtonItem btnFaturaListesi;
     }
 }
