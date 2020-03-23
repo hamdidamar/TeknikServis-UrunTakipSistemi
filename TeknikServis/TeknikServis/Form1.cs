@@ -192,5 +192,12 @@ namespace TeknikServis
             frmFaturaDetay.MdiParent = this;
             frmFaturaDetay.Show();
         }
+
+        private void btnDetaylıFaturaSorgulama_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmDetayliFaturaSorgulama frmDetayliFaturaSorgulama = new Forms.FrmDetayliFaturaSorgulama();
+            frmDetayliFaturaSorgulama.MdiParent = this;
+            frmDetayliFaturaSorgulama.Show();
+        }
     }
 }

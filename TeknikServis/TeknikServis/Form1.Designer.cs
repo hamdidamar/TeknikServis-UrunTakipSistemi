@@ -351,6 +351,7 @@
             this.btnDetaylıFaturaSorgulama.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDetaylıFaturaSorgulama.ImageOptions.Image")));
             this.btnDetaylıFaturaSorgulama.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDetaylıFaturaSorgulama.ImageOptions.LargeImage")));
             this.btnDetaylıFaturaSorgulama.Name = "btnDetaylıFaturaSorgulama";
+            this.btnDetaylıFaturaSorgulama.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDetaylıFaturaSorgulama_ItemClick);
             // 
             // btnFaturaCikti
             // 

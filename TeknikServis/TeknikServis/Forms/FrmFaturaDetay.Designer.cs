@@ -32,6 +32,7 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.grdFaturaDetayListesi = new DevExpress.XtraGrid.GridControl();
             this.gcFaturaDetay = new DevExpress.XtraEditors.GroupControl();
+            this.cmbUrunler = new DevExpress.XtraEditors.LookUpEdit();
             this.txtFaturaID = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txtTutar = new DevExpress.XtraEditors.TextEdit();
@@ -46,17 +47,16 @@
             this.btnSil = new DevExpress.XtraEditors.SimpleButton();
             this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.lblAd = new DevExpress.XtraEditors.LabelControl();
-            this.cmbUrunler = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdFaturaDetayListesi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcFaturaDetay)).BeginInit();
             this.gcFaturaDetay.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbUrunler.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFaturaID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTutar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFiyat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAdet.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbUrunler.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridView1
@@ -101,6 +101,17 @@
             this.gcFaturaDetay.Size = new System.Drawing.Size(454, 535);
             this.gcFaturaDetay.TabIndex = 29;
             this.gcFaturaDetay.Text = "Fatura Detay İşlemleri";
+            // 
+            // cmbUrunler
+            // 
+            this.cmbUrunler.Location = new System.Drawing.Point(98, 110);
+            this.cmbUrunler.Name = "cmbUrunler";
+            this.cmbUrunler.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbUrunler.Properties.DisplayMember = "Adi";
+            this.cmbUrunler.Properties.ValueMember = "Adi";
+            this.cmbUrunler.Size = new System.Drawing.Size(323, 20);
+            this.cmbUrunler.TabIndex = 25;
             // 
             // txtFaturaID
             // 
@@ -225,17 +236,6 @@
             this.lblAd.TabIndex = 0;
             this.lblAd.Text = "Ürün :";
             // 
-            // cmbUrunler
-            // 
-            this.cmbUrunler.Location = new System.Drawing.Point(98, 110);
-            this.cmbUrunler.Name = "cmbUrunler";
-            this.cmbUrunler.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbUrunler.Properties.DisplayMember = "Adi";
-            this.cmbUrunler.Properties.ValueMember = "ID";
-            this.cmbUrunler.Size = new System.Drawing.Size(323, 20);
-            this.cmbUrunler.TabIndex = 25;
-            // 
             // FrmFaturaDetay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,12 +251,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcFaturaDetay)).EndInit();
             this.gcFaturaDetay.ResumeLayout(false);
             this.gcFaturaDetay.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbUrunler.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFaturaID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTutar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFiyat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAdet.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtId.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbUrunler.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
