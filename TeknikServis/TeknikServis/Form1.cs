@@ -199,5 +199,26 @@ namespace TeknikServis
             frmDetayliFaturaSorgulama.MdiParent = this;
             frmDetayliFaturaSorgulama.Show();
         }
+
+        private void btnHakkimizda_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmGauge frmGauge = new Forms.FrmGauge();
+            frmGauge.MdiParent = this;
+            frmGauge.Show();
+        }
+
+        private void btnHarita_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmHarita frmHarita = new Forms.FrmHarita();
+            frmHarita.MdiParent = this;
+            frmHarita.Show();
+        }
+
+        private void btnRaporSihirbazi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Forms.FrmRapor frmRapor = new Forms.FrmRapor();
+            frmRapor.MdiParent = this;
+            frmRapor.Show();
+        }
     }
 }

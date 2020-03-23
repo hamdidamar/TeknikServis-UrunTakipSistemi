@@ -38,13 +38,17 @@
     <Reference Include="DevExpress.Data.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v18.1.UI, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Map.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.RichEdit.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Export, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v18.1.UI, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraCharts.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraCharts.v18.1.Extensions, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -52,8 +56,10 @@
     <Reference Include="DevExpress.XtraCharts.v18.1.Wizard, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGauges.v18.1.Core, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v18.1.Win, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraLayout.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraMap.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPivotGrid.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v18.1, Version=18.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -148,6 +154,18 @@
     <Compile Include="Forms\FrmFaturaListesi.Designer.cs">
       <DependentUpon>FrmFaturaListesi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmGauge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmGauge.Designer.cs">
+      <DependentUpon>FrmGauge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmHarita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmHarita.Designer.cs">
+      <DependentUpon>FrmHarita.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmKategori.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +207,12 @@
     </Compile>
     <Compile Include="Forms\FrmQRCode.Designer.cs">
       <DependentUpon>FrmQRCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRapor.Designer.cs">
+      <DependentUpon>FrmRapor.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmSatisListesi.cs">
       <SubType>Form</SubType>
@@ -267,6 +291,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\XtraReport1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\XtraReport1.Designer.cs">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>ModelTeknikServis.tt</DependentUpon>
     </Compile>
@@ -289,6 +319,12 @@
       <DependentUpon>ModelTeknikServis.tt</DependentUpon>
     </Compile>
     <Compile Include="Tbl_Gider.cs">
+      <DependentUpon>ModelTeknikServis.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tbl_Hakkimizda.cs">
+      <DependentUpon>ModelTeknikServis.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tbl_Iletisim.cs">
       <DependentUpon>ModelTeknikServis.tt</DependentUpon>
     </Compile>
     <Compile Include="Tbl_Kategori.cs">
@@ -339,6 +375,12 @@
     <EmbeddedResource Include="Forms\FrmFaturaListesi.resx">
       <DependentUpon>FrmFaturaListesi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmGauge.resx">
+      <DependentUpon>FrmGauge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmHarita.resx">
+      <DependentUpon>FrmHarita.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmKategori.resx">
       <DependentUpon>FrmKategori.cs</DependentUpon>
     </EmbeddedResource>
@@ -359,6 +401,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmQRCode.resx">
       <DependentUpon>FrmQRCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRapor.resx">
+      <DependentUpon>FrmRapor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmSatisListesi.resx">
       <DependentUpon>FrmSatisListesi.cs</DependentUpon>
@@ -400,6 +445,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\XtraReport1.resx">
+      <DependentUpon>XtraReport1.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="ModelTeknikServis.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelTeknikServis.Designer.cs</LastGenOutput>

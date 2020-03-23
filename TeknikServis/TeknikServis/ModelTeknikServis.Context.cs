@@ -40,5 +40,7 @@ namespace TeknikServis
         public virtual DbSet<Tbl_UrunHareket> Tbl_UrunHareket { get; set; }
         public virtual DbSet<Tbl_UrunKabul> Tbl_UrunKabul { get; set; }
         public virtual DbSet<Tbl_UrunTakip> Tbl_UrunTakip { get; set; }
+        public virtual DbSet<Tbl_Hakkimizda> Tbl_Hakkimizda { get; set; }
+        public virtual DbSet<Tbl_Iletisim> Tbl_Iletisim { get; set; }
     }
 }

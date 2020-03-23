@@ -93,6 +93,23 @@
           <Property Name="Tarih" Type="smalldatetime" />
           <Property Name="Tutar" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
+        <EntityType Name="Tbl_Hakkimizda">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Metin" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Tbl_Iletisim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdSoyad" Type="nvarchar(max)" />
+          <Property Name="Mail" Type="nvarchar(max)" />
+          <Property Name="Konu" Type="nvarchar(max)" />
+          <Property Name="Mesaj" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="Tbl_Kategori">
           <Key>
             <PropertyRef Name="ID" />
@@ -296,6 +313,8 @@
           <EntitySet Name="Tbl_FaturaBilgi" EntityType="Self.Tbl_FaturaBilgi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_FaturaDetay" EntityType="Self.Tbl_FaturaDetay" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Gider" EntityType="Self.Tbl_Gider" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Hakkimizda" EntityType="Self.Tbl_Hakkimizda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Iletisim" EntityType="Self.Tbl_Iletisim" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Kategori" EntityType="Self.Tbl_Kategori" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Not" EntityType="Self.Tbl_Not" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Personel" EntityType="Self.Tbl_Personel" Schema="dbo" store:Type="Tables" />
@@ -527,7 +546,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Durum" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="SonTarih" Type="DateTime" />
+          <Property Name="SonTarih" Type="DateTime" Precision="3" />
           <Property Name="SeriNo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
         </EntityType>
         <Association Name="FK_Tbl_FaturaBilgi_Tbl_Cari">
@@ -706,7 +725,26 @@
             <End Role="Tbl_Urun" EntitySet="Tbl_Urun" />
             <End Role="Tbl_UrunHareket" EntitySet="Tbl_UrunHareket" />
           </AssociationSet>
+          <EntitySet Name="Tbl_Hakkimizda" EntityType="DboTeknikServisModel.Tbl_Hakkimizda" />
+          <EntitySet Name="Tbl_Iletisim" EntityType="DboTeknikServisModel.Tbl_Iletisim" />
         </EntityContainer>
+        <EntityType Name="Tbl_Hakkimizda">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Metin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_Iletisim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdSoyad" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Konu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Mesaj" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -887,6 +925,25 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Durum" ColumnName="Durum" />
                 <ScalarProperty Name="SonTarih" ColumnName="SonTarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Hakkimizda">
+            <EntityTypeMapping TypeName="DboTeknikServisModel.Tbl_Hakkimizda">
+              <MappingFragment StoreEntitySet="Tbl_Hakkimizda">
+                <ScalarProperty Name="Metin" ColumnName="Metin" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Iletisim">
+            <EntityTypeMapping TypeName="DboTeknikServisModel.Tbl_Iletisim">
+              <MappingFragment StoreEntitySet="Tbl_Iletisim">
+                <ScalarProperty Name="Mesaj" ColumnName="Mesaj" />
+                <ScalarProperty Name="Konu" ColumnName="Konu" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

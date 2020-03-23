@@ -30,6 +30,8 @@
         <AssociationConnector Association="DboTeknikServisModel.FK_Tbl_UrunHareket_Tbl_Personel" ManuallyRouted="false" />
         <AssociationConnector Association="DboTeknikServisModel.FK_Tbl_UrunKabul_Tbl_Personel" ManuallyRouted="false" />
         <AssociationConnector Association="DboTeknikServisModel.FK_Tbl_UrunHareket_Tbl_Urun" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DboTeknikServisModel.Tbl_Hakkimizda" Width="1.5" PointX="12.375" PointY="8.75" />
+        <EntityTypeShape EntityType="DboTeknikServisModel.Tbl_Iletisim" Width="1.5" PointX="12.375" PointY="11.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

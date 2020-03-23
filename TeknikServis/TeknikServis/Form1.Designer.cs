@@ -75,6 +75,8 @@
             this.btnSatisListesi = new DevExpress.XtraBars.BarButtonItem();
             this.btnArizaliUrunDetaylari = new DevExpress.XtraBars.BarButtonItem();
             this.btnFaturaListesi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHakkimizda = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHarita = new DevExpress.XtraBars.BarButtonItem();
             this.rbnAnaSayfa = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbnUrunler = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -110,6 +112,7 @@
             this.ribbonPage9 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPage10 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.btnRaporSihirbazi = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -162,9 +165,12 @@
             this.btnYeniUrunSatisi,
             this.btnSatisListesi,
             this.btnArizaliUrunDetaylari,
-            this.btnFaturaListesi});
+            this.btnFaturaListesi,
+            this.btnHakkimizda,
+            this.btnHarita,
+            this.btnRaporSihirbazi});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 45;
+            this.ribbonControl1.MaxItemId = 48;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbnAnaSayfa,
@@ -554,6 +560,24 @@
             this.btnFaturaListesi.Name = "btnFaturaListesi";
             this.btnFaturaListesi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnFaturaListesi_ItemClick);
             // 
+            // btnHakkimizda
+            // 
+            this.btnHakkimizda.Caption = "Gauge";
+            this.btnHakkimizda.Id = 45;
+            this.btnHakkimizda.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHakkimizda.ImageOptions.Image")));
+            this.btnHakkimizda.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHakkimizda.ImageOptions.LargeImage")));
+            this.btnHakkimizda.Name = "btnHakkimizda";
+            this.btnHakkimizda.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHakkimizda_ItemClick);
+            // 
+            // btnHarita
+            // 
+            this.btnHarita.Caption = "Harita";
+            this.btnHarita.Id = 46;
+            this.btnHarita.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHarita.ImageOptions.Image")));
+            this.btnHarita.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHarita.ImageOptions.LargeImage")));
+            this.btnHarita.Name = "btnHarita";
+            this.btnHarita.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHarita_ItemClick);
+            // 
             // rbnAnaSayfa
             // 
             this.rbnAnaSayfa.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -703,6 +727,8 @@
             this.ribbonPageGroup7.ItemLinks.Add(this.btnDovizIslemleri);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnWord);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnExcel);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnHakkimizda);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnHarita);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnYardim);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Araçlar";
@@ -716,8 +742,9 @@
             // 
             // ribbonPageGroup8
             // 
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnRaporSihirbazi);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
-            this.ribbonPageGroup8.Text = "ribbonPageGroup8";
+            this.ribbonPageGroup8.Text = "Rapor İşlemleri";
             // 
             // rbnIstatistlikler
             // 
@@ -796,6 +823,15 @@
             // 
             this.ribbonPage10.Name = "ribbonPage10";
             this.ribbonPage10.Text = "ribbonPage10";
+            // 
+            // btnRaporSihirbazi
+            // 
+            this.btnRaporSihirbazi.Caption = "Rapor Sihirbazı";
+            this.btnRaporSihirbazi.Id = 47;
+            this.btnRaporSihirbazi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRaporSihirbazi.ImageOptions.Image")));
+            this.btnRaporSihirbazi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRaporSihirbazi.ImageOptions.LargeImage")));
+            this.btnRaporSihirbazi.Name = "btnRaporSihirbazi";
+            this.btnRaporSihirbazi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRaporSihirbazi_ItemClick);
             // 
             // Form1
             // 
@@ -897,5 +933,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup16;
         private DevExpress.XtraBars.BarButtonItem btnArizaliUrunDetaylari;
         private DevExpress.XtraBars.BarButtonItem btnFaturaListesi;
+        private DevExpress.XtraBars.BarButtonItem btnHakkimizda;
+        private DevExpress.XtraBars.BarButtonItem btnHarita;
+        private DevExpress.XtraBars.BarButtonItem btnRaporSihirbazi;
     }
 }
