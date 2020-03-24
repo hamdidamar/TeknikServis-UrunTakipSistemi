@@ -20,6 +20,8 @@ namespace TeknikServis
         public Nullable<System.DateTime> GelisTarih { get; set; }
         public Nullable<System.DateTime> CikisTarih { get; set; }
         public string UrunSeriNo { get; set; }
+        public Nullable<bool> Durum { get; set; }
+        public string UrunDurumDetay { get; set; }
     
         public virtual Tbl_Cari Tbl_Cari { get; set; }
         public virtual Tbl_Personel Tbl_Personel { get; set; }

@@ -77,6 +77,7 @@
             this.btnFaturaListesi = new DevExpress.XtraBars.BarButtonItem();
             this.btnHakkimizda = new DevExpress.XtraBars.BarButtonItem();
             this.btnHarita = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRaporSihirbazi = new DevExpress.XtraBars.BarButtonItem();
             this.rbnAnaSayfa = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbnUrunler = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -112,7 +113,7 @@
             this.ribbonPage9 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.ribbonPage10 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.btnRaporSihirbazi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAnaSayfa = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -168,9 +169,10 @@
             this.btnFaturaListesi,
             this.btnHakkimizda,
             this.btnHarita,
-            this.btnRaporSihirbazi});
+            this.btnRaporSihirbazi,
+            this.btnAnaSayfa});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 48;
+            this.ribbonControl1.MaxItemId = 49;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbnAnaSayfa,
@@ -578,6 +580,15 @@
             this.btnHarita.Name = "btnHarita";
             this.btnHarita.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHarita_ItemClick);
             // 
+            // btnRaporSihirbazi
+            // 
+            this.btnRaporSihirbazi.Caption = "Rapor Sihirbazı";
+            this.btnRaporSihirbazi.Id = 47;
+            this.btnRaporSihirbazi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRaporSihirbazi.ImageOptions.Image")));
+            this.btnRaporSihirbazi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRaporSihirbazi.ImageOptions.LargeImage")));
+            this.btnRaporSihirbazi.Name = "btnRaporSihirbazi";
+            this.btnRaporSihirbazi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRaporSihirbazi_ItemClick);
+            // 
             // rbnAnaSayfa
             // 
             this.rbnAnaSayfa.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -587,8 +598,8 @@
             // 
             // ribbonPageGroup1
             // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnAnaSayfa);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
             // rbnUrunler
             // 
@@ -824,14 +835,14 @@
             this.ribbonPage10.Name = "ribbonPage10";
             this.ribbonPage10.Text = "ribbonPage10";
             // 
-            // btnRaporSihirbazi
+            // btnAnaSayfa
             // 
-            this.btnRaporSihirbazi.Caption = "Rapor Sihirbazı";
-            this.btnRaporSihirbazi.Id = 47;
-            this.btnRaporSihirbazi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRaporSihirbazi.ImageOptions.Image")));
-            this.btnRaporSihirbazi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRaporSihirbazi.ImageOptions.LargeImage")));
-            this.btnRaporSihirbazi.Name = "btnRaporSihirbazi";
-            this.btnRaporSihirbazi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRaporSihirbazi_ItemClick);
+            this.btnAnaSayfa.Caption = "Ana Sayfa";
+            this.btnAnaSayfa.Id = 48;
+            this.btnAnaSayfa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAnaSayfa.ImageOptions.Image")));
+            this.btnAnaSayfa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAnaSayfa.ImageOptions.LargeImage")));
+            this.btnAnaSayfa.Name = "btnAnaSayfa";
+            this.btnAnaSayfa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAnaSayfa_ItemClick);
             // 
             // Form1
             // 
@@ -936,5 +947,6 @@
         private DevExpress.XtraBars.BarButtonItem btnHakkimizda;
         private DevExpress.XtraBars.BarButtonItem btnHarita;
         private DevExpress.XtraBars.BarButtonItem btnRaporSihirbazi;
+        private DevExpress.XtraBars.BarButtonItem btnAnaSayfa;
     }
 }

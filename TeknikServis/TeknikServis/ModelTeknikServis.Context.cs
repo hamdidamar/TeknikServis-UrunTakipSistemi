@@ -12,6 +12,8 @@ namespace TeknikServis
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class DboTeknikServisEntities1 : DbContext
     {
@@ -42,5 +44,22 @@ namespace TeknikServis
         public virtual DbSet<Tbl_UrunTakip> Tbl_UrunTakip { get; set; }
         public virtual DbSet<Tbl_Hakkimizda> Tbl_Hakkimizda { get; set; }
         public virtual DbSet<Tbl_Iletisim> Tbl_Iletisim { get; set; }
+        public virtual DbSet<Tbl_IL> Tbl_IL { get; set; }
+        public virtual DbSet<Tbl_ILCE> Tbl_ILCE { get; set; }
+    
+        public virtual ObjectResult<UrunKategori_Result> UrunKategori()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<UrunKategori_Result>("UrunKategori");
+        }
+    
+        public virtual ObjectResult<string> MaxUrunKategori()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("MaxUrunKategori");
+        }
+    
+        public virtual ObjectResult<string> MaxUrunMarka()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("MaxUrunMarka");
+        }
     }
 }

@@ -17,6 +17,7 @@ namespace TeknikServis.Forms
             InitializeComponent();
         }
 
+        int secilen;
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             try
@@ -27,8 +28,8 @@ namespace TeknikServis.Forms
                 musteri.Soyadi = txtMusteriSoyad.Text;
                 musteri.Telefon = txtMusteriTelefon.Text;
                 musteri.Mail = txtMusteriMail.Text;
-                musteri.IL = txtMusteriİl.Text;
-                musteri.ILCE = txtMusteriİlce.Text;
+                musteri.IL = cmbMusteriIL.EditValue.ToString();
+                musteri.ILCE = cmbMusteriILCE.EditValue.ToString();
                 musteri.Banka = txtMusteriBanka.Text;
                 musteri.VergiDairesi = txtMusteriVDaire.Text;
                 musteri.VergiNo = txtMusteriVNo.Text;
@@ -46,6 +47,40 @@ namespace TeknikServis.Forms
         }
 
         private void btnVazgec_Click(object sender, EventArgs e)
+        {
+            txtMusteriAd.Text = "";
+            txtMusteriSoyad.Text = "";
+            txtMusteriTelefon.Text = "";
+            txtMusteriMail.Text = "";
+            txtMusteriBanka.Text = "";
+            txtMusteriVDaire.Text = "";
+            txtMusteriVNo.Text = "";
+            txtMusteriStatu.Text = "";
+            txtMusteriAdres.Text = "";
+        }
+        DboTeknikServisEntities1 db = new DboTeknikServisEntities1();
+        private void FrmYeniMusteri_Load(object sender, EventArgs e)
+        {
+            cmbMusteriIL.Properties.DataSource = (from x in db.Tbl_IL
+                                                  select new
+                                                  {
+                                                      x.id,
+                                                      x.sehir
+                                                  }).ToList();
+        }
+        private void cmbMusteriIL_EditValueChanged(object sender, EventArgs e)
+        {
+            secilen = int.Parse(cmbMusteriIL.EditValue.ToString());
+            cmbMusteriILCE.Properties.DataSource = (from x in db.Tbl_ILCE
+                                                    select new
+                                                    {
+                                                        x.id,
+                                                        x.ilce,
+                                                        x.sehir
+                                                    }).Where(z => z.sehir == secilen).ToList();
+        }
+
+        private void btnCikis_Click(object sender, EventArgs e)
         {
             this.Close();
         }

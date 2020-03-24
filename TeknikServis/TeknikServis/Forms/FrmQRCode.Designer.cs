@@ -35,9 +35,11 @@
             this.pictureEdit12 = new DevExpress.XtraEditors.PictureEdit();
             this.btnQROlustur = new DevExpress.XtraEditors.SimpleButton();
             this.imgQRCode = new DevExpress.XtraEditors.PictureEdit();
+            this.btnCikis = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSeriNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit12.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgQRCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCikis.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -96,7 +98,7 @@
             this.btnQROlustur.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnQROlustur.Appearance.Options.UseFont = true;
             this.btnQROlustur.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.btnQROlustur.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKayit.ImageOptions.Image")));
+            this.btnQROlustur.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnQROlustur.ImageOptions.Image")));
             this.btnQROlustur.Location = new System.Drawing.Point(211, 145);
             this.btnQROlustur.Name = "btnQROlustur";
             this.btnQROlustur.Size = new System.Drawing.Size(142, 32);
@@ -115,12 +117,27 @@
             this.imgQRCode.Size = new System.Drawing.Size(220, 202);
             this.imgQRCode.TabIndex = 126;
             // 
+            // btnCikis
+            // 
+            this.btnCikis.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCikis.EditValue = ((object)(resources.GetObject("btnCikis.EditValue")));
+            this.btnCikis.Location = new System.Drawing.Point(558, 3);
+            this.btnCikis.Name = "btnCikis";
+            this.btnCikis.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.btnCikis.Properties.Appearance.Options.UseBackColor = true;
+            this.btnCikis.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.btnCikis.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.btnCikis.Size = new System.Drawing.Size(50, 50);
+            this.btnCikis.TabIndex = 139;
+            this.btnCikis.Click += new System.EventHandler(this.btnCikis_Click);
+            // 
             // FrmQRCode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
             this.ClientSize = new System.Drawing.Size(611, 437);
+            this.Controls.Add(this.btnCikis);
             this.Controls.Add(this.imgQRCode);
             this.Controls.Add(this.btnQROlustur);
             this.Controls.Add(this.labelControl1);
@@ -134,6 +151,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSeriNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit12.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgQRCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCikis.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,5 +165,6 @@
         private DevExpress.XtraEditors.PictureEdit pictureEdit12;
         private DevExpress.XtraEditors.SimpleButton btnQROlustur;
         private DevExpress.XtraEditors.PictureEdit imgQRCode;
+        private DevExpress.XtraEditors.PictureEdit btnCikis;
     }
 }

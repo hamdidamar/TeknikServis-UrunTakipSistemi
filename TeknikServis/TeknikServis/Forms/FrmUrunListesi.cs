@@ -24,19 +24,27 @@ namespace TeknikServis.Forms
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            Tbl_Urun urun = new Tbl_Urun();
-            urun.Adi = txtUrunAd.Text;
-            urun.Marka = txtMarka.Text;
-            //urun.KategoriID = cmbKategoriler.Text;
-            urun.AlisFiyat = decimal.Parse(txtAlisFiyat.Text);
-            urun.SatisFiyat = decimal.Parse(txtSatisFiyat.Text);
-            urun.StokSayisi = int.Parse(txtStok.Text);
-            urun.Durum = false;
-
-            db.Tbl_Urun.Add(urun);
-            db.SaveChanges();
-            MessageBox.Show("Ürün Ekleme İşlemi Başarılı","Bilgi",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            Listele();
+            try
+            {
+                Tbl_Urun urun = new Tbl_Urun();
+                urun.Adi = txtUrunAd.Text;
+                urun.Marka = txtMarka.Text;
+                urun.KategoriID = int.Parse(cmbKategoriler.EditValue.ToString());
+                urun.AlisFiyat = decimal.Parse(txtAlisFiyat.Text);
+                urun.SatisFiyat = decimal.Parse(txtSatisFiyat.Text);
+                urun.StokSayisi = int.Parse(txtStok.Text);
+                urun.Durum = false;
+                db.Tbl_Urun.Add(urun);
+                db.SaveChanges();
+                MessageBox.Show("Ürün Ekleme İşlemi Başarılı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Listele();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ürün Ekleme İşlemi Başarısız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Listele();
+            }
+            
 
         }
         public void Listele()
@@ -54,18 +62,32 @@ namespace TeknikServis.Forms
                                u.SatisFiyat
                            };
             grdUrunListesi.DataSource = degerler.ToList();
-            cmbKategoriler.Properties.DataSource = db.Tbl_Kategori.ToList();
-            
+            cmbKategoriler.Properties.DataSource = (from x in db.Tbl_Kategori
+                                                    select new
+                                                    {
+                                                        x.ID,
+                                                        x.Adi
+                                                    }).ToList();
+
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            txtUrunId.Text = gridView1.GetFocusedRowCellValue("ID").ToString();
-            txtUrunAd.Text = gridView1.GetFocusedRowCellValue("Adi").ToString();
-            txtMarka.Text = gridView1.GetFocusedRowCellValue("Marka").ToString();
-            txtAlisFiyat.Text = gridView1.GetFocusedRowCellValue("AlisFiyat").ToString();
-            txtSatisFiyat.Text = gridView1.GetFocusedRowCellValue("SatisFiyat").ToString();
-            txtStok.Text = gridView1.GetFocusedRowCellValue("StokSayisi").ToString();
+            try
+            {
+                txtUrunId.Text = gridView1.GetFocusedRowCellValue("ID").ToString();
+                txtUrunAd.Text = gridView1.GetFocusedRowCellValue("Adi").ToString();
+                txtMarka.Text = gridView1.GetFocusedRowCellValue("Marka").ToString();
+                txtAlisFiyat.Text = gridView1.GetFocusedRowCellValue("AlisFiyat").ToString();
+                txtSatisFiyat.Text = gridView1.GetFocusedRowCellValue("SatisFiyat").ToString();
+                txtStok.Text = gridView1.GetFocusedRowCellValue("StokSayisi").ToString();
+                cmbKategoriler.Text = gridView1.GetFocusedRowCellValue("Kategori").ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Hata Seçtiğiniz Sütünda Null Değerler Olabilir");
+            }
+            
         }
 
         private void btnSil_Click(object sender, EventArgs e)
@@ -92,6 +114,16 @@ namespace TeknikServis.Forms
             MessageBox.Show("Ürün Güncelleme İşlemi Başarılı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Listele();
 
+        }
+
+        private void btnTemizle_Click(object sender, EventArgs e)
+        {
+            txtUrunId.Text = "";
+            txtUrunAd.Text = "";
+            txtMarka.Text = "";
+            txtAlisFiyat.Text = "";
+            txtSatisFiyat.Text="";
+            txtStok.Text = "";
         }
     }
 }

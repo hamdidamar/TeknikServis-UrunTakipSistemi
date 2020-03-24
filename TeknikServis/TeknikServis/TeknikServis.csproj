@@ -106,6 +106,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmAnaSayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAnaSayfa.Designer.cs">
+      <DependentUpon>FrmAnaSayfa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmArizaDetay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,6 +330,12 @@
     <Compile Include="Tbl_Hakkimizda.cs">
       <DependentUpon>ModelTeknikServis.tt</DependentUpon>
     </Compile>
+    <Compile Include="Tbl_IL.cs">
+      <DependentUpon>ModelTeknikServis.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tbl_ILCE.cs">
+      <DependentUpon>ModelTeknikServis.tt</DependentUpon>
+    </Compile>
     <Compile Include="Tbl_Iletisim.cs">
       <DependentUpon>ModelTeknikServis.tt</DependentUpon>
     </Compile>
@@ -348,8 +360,14 @@
     <Compile Include="Tbl_UrunTakip.cs">
       <DependentUpon>ModelTeknikServis.tt</DependentUpon>
     </Compile>
+    <Compile Include="UrunKategori_Result.cs">
+      <DependentUpon>ModelTeknikServis.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAnaSayfa.resx">
+      <DependentUpon>FrmAnaSayfa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmArizaDetay.resx">
       <DependentUpon>FrmArizaDetay.cs</DependentUpon>

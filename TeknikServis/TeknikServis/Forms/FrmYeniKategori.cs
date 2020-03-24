@@ -22,13 +22,18 @@ namespace TeknikServis.Forms
             try
             {
                 DboTeknikServisEntities1 db = new DboTeknikServisEntities1();
-                Tbl_Kategori kategori = new Tbl_Kategori();
-                kategori.Adi = txtKategoriAd.Text;
-               
-
-                db.Tbl_Kategori.Add(kategori);
-                db.SaveChanges();
-                MessageBox.Show("Kategori Ekleme Başarılı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (txtKategoriAd.Text != "" && txtKategoriAd.Text.Length <= 50)
+                {
+                    Tbl_Kategori kategori = new Tbl_Kategori();
+                    kategori.Adi = txtKategoriAd.Text;
+                    db.Tbl_Kategori.Add(kategori);
+                    db.SaveChanges();
+                    MessageBox.Show("Kategori Ekleme Başarılı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Lütfen Girdiğiniz Değerleri Kontrol Ediniz", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception)
             {
@@ -37,6 +42,16 @@ namespace TeknikServis.Forms
         }
 
         private void btnVazgec_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FrmYeniKategori_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCikis_Click(object sender, EventArgs e)
         {
             this.Close();
         }

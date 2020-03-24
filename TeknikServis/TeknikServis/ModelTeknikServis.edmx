@@ -100,6 +100,21 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Metin" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="Tbl_IL">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sehir" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Tbl_ILCE">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="ilce" Type="nvarchar" MaxLength="255" />
+          <Property Name="sehir" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
         <EntityType Name="Tbl_Iletisim">
           <Key>
             <PropertyRef Name="ID" />
@@ -125,6 +140,7 @@
           <Property Name="Baslik" Type="nvarchar(max)" />
           <Property Name="Icerik" Type="nvarchar(max)" />
           <Property Name="Durum" Type="bit" />
+          <Property Name="Tarih" Type="datetime" />
         </EntityType>
         <EntityType Name="Tbl_Personel">
           <Key>
@@ -174,6 +190,8 @@
           <Property Name="GelisTarih" Type="smalldatetime" />
           <Property Name="CikisTarih" Type="smalldatetime" />
           <Property Name="UrunSeriNo" Type="char" MaxLength="10" />
+          <Property Name="Durum" Type="bit" />
+          <Property Name="UrunDurumDetay" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Tbl_UrunTakip">
           <Key>
@@ -217,6 +235,18 @@
             </Principal>
             <Dependent Role="Tbl_FaturaDetay">
               <PropertyRef Name="FaturaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_ILCE_Tbl_IL">
+          <End Role="Tbl_IL" Type="Self.Tbl_IL" Multiplicity="1" />
+          <End Role="Tbl_ILCE" Type="Self.Tbl_ILCE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_IL">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Tbl_ILCE">
+              <PropertyRef Name="sehir" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -304,6 +334,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="MaxUrunKategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="MaxUrunMarka" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="UrunKategori" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DboTeknikServisModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Admin" EntityType="Self.Tbl_Admin" Schema="dbo" store:Type="Tables" />
@@ -314,6 +347,8 @@
           <EntitySet Name="Tbl_FaturaDetay" EntityType="Self.Tbl_FaturaDetay" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Gider" EntityType="Self.Tbl_Gider" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Hakkimizda" EntityType="Self.Tbl_Hakkimizda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_IL" EntityType="Self.Tbl_IL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_ILCE" EntityType="Self.Tbl_ILCE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Iletisim" EntityType="Self.Tbl_Iletisim" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Kategori" EntityType="Self.Tbl_Kategori" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Not" EntityType="Self.Tbl_Not" Schema="dbo" store:Type="Tables" />
@@ -333,6 +368,10 @@
           <AssociationSet Name="FK_Tbl_FaturaDetay_Tbl_FaturaBilgi" Association="Self.FK_Tbl_FaturaDetay_Tbl_FaturaBilgi">
             <End Role="Tbl_FaturaBilgi" EntitySet="Tbl_FaturaBilgi" />
             <End Role="Tbl_FaturaDetay" EntitySet="Tbl_FaturaDetay" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_ILCE_Tbl_IL" Association="Self.FK_Tbl_ILCE_Tbl_IL">
+            <End Role="Tbl_IL" EntitySet="Tbl_IL" />
+            <End Role="Tbl_ILCE" EntitySet="Tbl_ILCE" />
           </AssociationSet>
           <AssociationSet Name="FK_Tbl_Personel_Tbl_Departman" Association="Self.FK_Tbl_Personel_Tbl_Departman">
             <End Role="Tbl_Departman" EntitySet="Tbl_Departman" />
@@ -479,6 +518,7 @@
           <Property Name="Baslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Icerik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Durum" Type="Boolean" />
+          <Property Name="Tarih" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Tbl_Personel">
           <Key>
@@ -539,6 +579,8 @@
           <NavigationProperty Name="Tbl_Cari" Relationship="Self.FK_Tbl_UrunKabul_Tbl_Cari" FromRole="Tbl_UrunKabul" ToRole="Tbl_Cari" />
           <NavigationProperty Name="Tbl_Personel" Relationship="Self.FK_Tbl_UrunKabul_Tbl_Personel" FromRole="Tbl_UrunKabul" ToRole="Tbl_Personel" />
           <Property Name="UrunSeriNo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Durum" Type="Boolean" />
+          <Property Name="UrunDurumDetay" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Tbl_UrunTakip">
           <Key>
@@ -727,6 +769,15 @@
           </AssociationSet>
           <EntitySet Name="Tbl_Hakkimizda" EntityType="DboTeknikServisModel.Tbl_Hakkimizda" />
           <EntitySet Name="Tbl_Iletisim" EntityType="DboTeknikServisModel.Tbl_Iletisim" />
+          <FunctionImport Name="UrunKategori" ReturnType="Collection(DboTeknikServisModel.UrunKategori_Result)" />
+          <FunctionImport Name="MaxUrunKategori" ReturnType="Collection(String)" />
+          <FunctionImport Name="MaxUrunMarka" ReturnType="Collection(String)" />
+          <EntitySet Name="Tbl_IL" EntityType="DboTeknikServisModel.Tbl_IL" />
+          <EntitySet Name="Tbl_ILCE" EntityType="DboTeknikServisModel.Tbl_ILCE" />
+          <AssociationSet Name="FK_Tbl_ILCE_Tbl_IL" Association="DboTeknikServisModel.FK_Tbl_ILCE_Tbl_IL">
+            <End Role="Tbl_IL" EntitySet="Tbl_IL" />
+            <End Role="Tbl_ILCE" EntitySet="Tbl_ILCE" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Tbl_Hakkimizda">
           <Key>
@@ -745,6 +796,39 @@
           <Property Name="Konu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Mesaj" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
+        <ComplexType Name="UrunKategori_Result">
+          <Property Type="String" Name="Adi" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Adet" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="Tbl_IL">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sehir" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tbl_ILCE" Relationship="DboTeknikServisModel.FK_Tbl_ILCE_Tbl_IL" FromRole="Tbl_IL" ToRole="Tbl_ILCE" />
+        </EntityType>
+        <EntityType Name="Tbl_ILCE">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="ilce" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="sehir" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Tbl_IL" Relationship="DboTeknikServisModel.FK_Tbl_ILCE_Tbl_IL" FromRole="Tbl_ILCE" ToRole="Tbl_IL" />
+        </EntityType>
+        <Association Name="FK_Tbl_ILCE_Tbl_IL">
+          <End Type="DboTeknikServisModel.Tbl_IL" Role="Tbl_IL" Multiplicity="1" />
+          <End Type="DboTeknikServisModel.Tbl_ILCE" Role="Tbl_ILCE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_IL">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Tbl_ILCE">
+              <PropertyRef Name="sehir" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -858,6 +942,7 @@
           <EntitySetMapping Name="Tbl_Not">
             <EntityTypeMapping TypeName="DboTeknikServisModel.Tbl_Not">
               <MappingFragment StoreEntitySet="Tbl_Not">
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Baslik" ColumnName="Baslik" />
                 <ScalarProperty Name="Icerik" ColumnName="Icerik" />
@@ -909,6 +994,8 @@
           <EntitySetMapping Name="Tbl_UrunKabul">
             <EntityTypeMapping TypeName="DboTeknikServisModel.Tbl_UrunKabul">
               <MappingFragment StoreEntitySet="Tbl_UrunKabul">
+                <ScalarProperty Name="UrunDurumDetay" ColumnName="UrunDurumDetay" />
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
                 <ScalarProperty Name="UrunSeriNo" ColumnName="UrunSeriNo" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="CariID" ColumnName="CariID" />
@@ -944,6 +1031,33 @@
                 <ScalarProperty Name="Mail" ColumnName="Mail" />
                 <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="UrunKategori" FunctionName="DboTeknikServisModel.Store.UrunKategori">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DboTeknikServisModel.UrunKategori_Result">
+                <ScalarProperty Name="Adi" ColumnName="Adi" />
+                <ScalarProperty Name="Adet" ColumnName="Adet" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="MaxUrunKategori" FunctionName="DboTeknikServisModel.Store.MaxUrunKategori" />
+          <FunctionImportMapping FunctionImportName="MaxUrunMarka" FunctionName="DboTeknikServisModel.Store.MaxUrunMarka" />
+          <EntitySetMapping Name="Tbl_IL">
+            <EntityTypeMapping TypeName="DboTeknikServisModel.Tbl_IL">
+              <MappingFragment StoreEntitySet="Tbl_IL">
+                <ScalarProperty Name="sehir" ColumnName="sehir" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_ILCE">
+            <EntityTypeMapping TypeName="DboTeknikServisModel.Tbl_ILCE">
+              <MappingFragment StoreEntitySet="Tbl_ILCE">
+                <ScalarProperty Name="sehir" ColumnName="sehir" />
+                <ScalarProperty Name="ilce" ColumnName="ilce" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

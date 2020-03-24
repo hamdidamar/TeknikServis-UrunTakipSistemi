@@ -45,6 +45,9 @@ namespace TeknikServis.Forms
 
             lblToplamMarkaSayisi.Text = (from x in db.Tbl_Urun select x.Marka).Distinct().Count().ToString();
 
+            lblArizaliUrunSayisi.Text = db.Tbl_UrunKabul.Count().ToString();
+            lblEnFazlaUrunKategorisi.Text = db.MaxUrunKategori().FirstOrDefault();
+
 
 
         }

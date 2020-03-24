@@ -53,11 +53,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureEdit6 = new DevExpress.XtraEditors.PictureEdit();
-            this.lblEnFazlaArizaliMarka = new DevExpress.XtraEditors.LabelControl();
+            this.lblIptalEdilenOnarımSayisi = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureEdit7 = new DevExpress.XtraEditors.PictureEdit();
-            this.lblArizaliUrunToplamKazanc = new DevExpress.XtraEditors.LabelControl();
+            this.lblDonusBeklenenMusteriSayisi = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureEdit8 = new DevExpress.XtraEditors.PictureEdit();
@@ -126,6 +126,7 @@
             this.gridView2.Appearance.Row.Options.UseBackColor = true;
             this.gridView2.GridControl = this.grdArizaListesi;
             this.gridView2.Name = "gridView2";
+            this.gridView2.DoubleClick += new System.EventHandler(this.gridView2_DoubleClick);
             // 
             // pictureEdit2
             // 
@@ -242,6 +243,7 @@
             this.chartControl1.Location = new System.Drawing.Point(5, 95);
             this.chartControl1.Name = "chartControl1";
             this.chartControl1.PaletteName = "Pastel Kit";
+            series1.LegendTextPattern = "{A}";
             series1.Name = "Series 1";
             series1.View = pie3DSeriesView1;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
@@ -312,7 +314,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(176)))), ((int)(((byte)(190)))));
             this.panel5.Controls.Add(this.pictureEdit6);
-            this.panel5.Controls.Add(this.lblEnFazlaArizaliMarka);
+            this.panel5.Controls.Add(this.lblIptalEdilenOnarımSayisi);
             this.panel5.Controls.Add(this.labelControl8);
             this.panel5.Location = new System.Drawing.Point(1161, 138);
             this.panel5.Name = "panel5";
@@ -332,17 +334,17 @@
             this.pictureEdit6.Size = new System.Drawing.Size(50, 50);
             this.pictureEdit6.TabIndex = 4;
             // 
-            // lblEnFazlaArizaliMarka
+            // lblIptalEdilenOnarımSayisi
             // 
-            this.lblEnFazlaArizaliMarka.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblEnFazlaArizaliMarka.Appearance.ForeColor = System.Drawing.Color.White;
-            this.lblEnFazlaArizaliMarka.Appearance.Options.UseFont = true;
-            this.lblEnFazlaArizaliMarka.Appearance.Options.UseForeColor = true;
-            this.lblEnFazlaArizaliMarka.Location = new System.Drawing.Point(17, 52);
-            this.lblEnFazlaArizaliMarka.Name = "lblEnFazlaArizaliMarka";
-            this.lblEnFazlaArizaliMarka.Size = new System.Drawing.Size(103, 32);
-            this.lblEnFazlaArizaliMarka.TabIndex = 1;
-            this.lblEnFazlaArizaliMarka.Text = "TOSHIBA";
+            this.lblIptalEdilenOnarımSayisi.Appearance.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblIptalEdilenOnarımSayisi.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblIptalEdilenOnarımSayisi.Appearance.Options.UseFont = true;
+            this.lblIptalEdilenOnarımSayisi.Appearance.Options.UseForeColor = true;
+            this.lblIptalEdilenOnarımSayisi.Location = new System.Drawing.Point(17, 52);
+            this.lblIptalEdilenOnarımSayisi.Name = "lblIptalEdilenOnarımSayisi";
+            this.lblIptalEdilenOnarımSayisi.Size = new System.Drawing.Size(14, 32);
+            this.lblIptalEdilenOnarımSayisi.TabIndex = 1;
+            this.lblIptalEdilenOnarımSayisi.Text = "0";
             // 
             // labelControl8
             // 
@@ -352,15 +354,15 @@
             this.labelControl8.Appearance.Options.UseForeColor = true;
             this.labelControl8.Location = new System.Drawing.Point(17, 15);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(127, 17);
+            this.labelControl8.Size = new System.Drawing.Size(147, 17);
             this.labelControl8.TabIndex = 0;
-            this.labelControl8.Text = "En Fazla Arızalı Marka";
+            this.labelControl8.Text = "İptal Edilen Onarım Sayısı";
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(65)))), ((int)(((byte)(24)))));
             this.panel6.Controls.Add(this.pictureEdit7);
-            this.panel6.Controls.Add(this.lblArizaliUrunToplamKazanc);
+            this.panel6.Controls.Add(this.lblDonusBeklenenMusteriSayisi);
             this.panel6.Controls.Add(this.labelControl10);
             this.panel6.Location = new System.Drawing.Point(737, 138);
             this.panel6.Name = "panel6";
@@ -380,17 +382,17 @@
             this.pictureEdit7.Size = new System.Drawing.Size(50, 50);
             this.pictureEdit7.TabIndex = 4;
             // 
-            // lblArizaliUrunToplamKazanc
+            // lblDonusBeklenenMusteriSayisi
             // 
-            this.lblArizaliUrunToplamKazanc.Appearance.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblArizaliUrunToplamKazanc.Appearance.ForeColor = System.Drawing.Color.White;
-            this.lblArizaliUrunToplamKazanc.Appearance.Options.UseFont = true;
-            this.lblArizaliUrunToplamKazanc.Appearance.Options.UseForeColor = true;
-            this.lblArizaliUrunToplamKazanc.Location = new System.Drawing.Point(17, 52);
-            this.lblArizaliUrunToplamKazanc.Name = "lblArizaliUrunToplamKazanc";
-            this.lblArizaliUrunToplamKazanc.Size = new System.Drawing.Size(103, 37);
-            this.lblArizaliUrunToplamKazanc.TabIndex = 1;
-            this.lblArizaliUrunToplamKazanc.Text = "1524,58";
+            this.lblDonusBeklenenMusteriSayisi.Appearance.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblDonusBeklenenMusteriSayisi.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblDonusBeklenenMusteriSayisi.Appearance.Options.UseFont = true;
+            this.lblDonusBeklenenMusteriSayisi.Appearance.Options.UseForeColor = true;
+            this.lblDonusBeklenenMusteriSayisi.Location = new System.Drawing.Point(17, 52);
+            this.lblDonusBeklenenMusteriSayisi.Name = "lblDonusBeklenenMusteriSayisi";
+            this.lblDonusBeklenenMusteriSayisi.Size = new System.Drawing.Size(32, 37);
+            this.lblDonusBeklenenMusteriSayisi.TabIndex = 1;
+            this.lblDonusBeklenenMusteriSayisi.Text = "15";
             // 
             // labelControl10
             // 
@@ -400,9 +402,9 @@
             this.labelControl10.Appearance.Options.UseForeColor = true;
             this.labelControl10.Location = new System.Drawing.Point(17, 15);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(175, 17);
+            this.labelControl10.Size = new System.Drawing.Size(176, 17);
             this.labelControl10.TabIndex = 0;
-            this.labelControl10.Text = "Arızalı Ürünler Toplam Kazanç";
+            this.labelControl10.Text = "Dönüş Beklenen Müşteri Sayısı";
             // 
             // panel7
             // 
@@ -466,7 +468,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Name = "FrmArizaListesi";
-            this.Text = "FrmArizaListesi";
+            this.Text = "Arıza Listesi";
             this.Load += new System.EventHandler(this.FrmArizaListesi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdArizaListesi)).EndInit();
@@ -523,11 +525,11 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
         private DevExpress.XtraEditors.PictureEdit pictureEdit6;
-        private DevExpress.XtraEditors.LabelControl lblEnFazlaArizaliMarka;
+        private DevExpress.XtraEditors.LabelControl lblIptalEdilenOnarımSayisi;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private System.Windows.Forms.Panel panel6;
         private DevExpress.XtraEditors.PictureEdit pictureEdit7;
-        private DevExpress.XtraEditors.LabelControl lblArizaliUrunToplamKazanc;
+        private DevExpress.XtraEditors.LabelControl lblDonusBeklenenMusteriSayisi;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private System.Windows.Forms.Panel panel7;
         private DevExpress.XtraEditors.PictureEdit pictureEdit8;

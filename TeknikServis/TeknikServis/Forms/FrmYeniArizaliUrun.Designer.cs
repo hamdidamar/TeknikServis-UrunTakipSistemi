@@ -40,20 +40,22 @@
             this.txtTarih = new DevExpress.XtraEditors.TextEdit();
             this.pictureEdit4 = new DevExpress.XtraEditors.PictureEdit();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtPersonel = new DevExpress.XtraEditors.TextEdit();
             this.pictureEdit3 = new DevExpress.XtraEditors.PictureEdit();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtMusteriId = new DevExpress.XtraEditors.TextEdit();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.cmbMusteriler = new DevExpress.XtraEditors.LookUpEdit();
+            this.btnCikis = new DevExpress.XtraEditors.PictureEdit();
+            this.cmbPersoneller = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSeriNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit12.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTarih.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPersonel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMusteriId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbMusteriler.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCikis.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbPersoneller.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureEdit7
@@ -106,6 +108,7 @@
             this.txtSeriNo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
             this.txtSeriNo.Size = new System.Drawing.Size(216, 24);
             this.txtSeriNo.TabIndex = 2;
+            this.txtSeriNo.Click += new System.EventHandler(this.txtSeriNo_Click);
             // 
             // pictureEdit12
             // 
@@ -138,7 +141,7 @@
             this.btnKayit.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnKayit.Appearance.Options.UseFont = true;
             this.btnKayit.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.btnKayit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSatis.ImageOptions.Image")));
+            this.btnKayit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKayit.ImageOptions.Image")));
             this.btnKayit.Location = new System.Drawing.Point(62, 326);
             this.btnKayit.Name = "btnKayit";
             this.btnKayit.Size = new System.Drawing.Size(136, 32);
@@ -171,6 +174,7 @@
             this.txtTarih.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTime;
             this.txtTarih.Size = new System.Drawing.Size(216, 24);
             this.txtTarih.TabIndex = 4;
+            this.txtTarih.Click += new System.EventHandler(this.txtTarih_Click);
             // 
             // pictureEdit4
             // 
@@ -194,21 +198,6 @@
             this.panel3.Size = new System.Drawing.Size(220, 3);
             this.panel3.TabIndex = 112;
             // 
-            // txtPersonel
-            // 
-            this.txtPersonel.EditValue = "Personel";
-            this.txtPersonel.Location = new System.Drawing.Point(120, 211);
-            this.txtPersonel.Name = "txtPersonel";
-            this.txtPersonel.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(227)))), ((int)(((byte)(116)))));
-            this.txtPersonel.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtPersonel.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.txtPersonel.Properties.Appearance.Options.UseBackColor = true;
-            this.txtPersonel.Properties.Appearance.Options.UseFont = true;
-            this.txtPersonel.Properties.Appearance.Options.UseForeColor = true;
-            this.txtPersonel.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtPersonel.Size = new System.Drawing.Size(216, 24);
-            this.txtPersonel.TabIndex = 3;
-            // 
             // pictureEdit3
             // 
             this.pictureEdit3.EditValue = ((object)(resources.GetObject("pictureEdit3.EditValue")));
@@ -231,21 +220,6 @@
             this.panel1.Size = new System.Drawing.Size(220, 3);
             this.panel1.TabIndex = 108;
             // 
-            // txtMusteriId
-            // 
-            this.txtMusteriId.EditValue = "Müşteri ID";
-            this.txtMusteriId.Location = new System.Drawing.Point(120, 90);
-            this.txtMusteriId.Name = "txtMusteriId";
-            this.txtMusteriId.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(227)))), ((int)(((byte)(116)))));
-            this.txtMusteriId.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtMusteriId.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.txtMusteriId.Properties.Appearance.Options.UseBackColor = true;
-            this.txtMusteriId.Properties.Appearance.Options.UseFont = true;
-            this.txtMusteriId.Properties.Appearance.Options.UseForeColor = true;
-            this.txtMusteriId.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtMusteriId.Size = new System.Drawing.Size(216, 24);
-            this.txtMusteriId.TabIndex = 1;
-            // 
             // pictureEdit1
             // 
             this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
@@ -259,12 +233,67 @@
             this.pictureEdit1.Size = new System.Drawing.Size(50, 50);
             this.pictureEdit1.TabIndex = 107;
             // 
+            // cmbMusteriler
+            // 
+            this.cmbMusteriler.EditValue = "Kategori Seçiniz";
+            this.cmbMusteriler.Location = new System.Drawing.Point(118, 88);
+            this.cmbMusteriler.Name = "cmbMusteriler";
+            this.cmbMusteriler.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.cmbMusteriler.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbMusteriler.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.cmbMusteriler.Properties.Appearance.Options.UseBackColor = true;
+            this.cmbMusteriler.Properties.Appearance.Options.UseFont = true;
+            this.cmbMusteriler.Properties.Appearance.Options.UseForeColor = true;
+            this.cmbMusteriler.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmbMusteriler.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbMusteriler.Properties.DisplayMember = "Adi";
+            this.cmbMusteriler.Properties.ValueMember = "ID";
+            this.cmbMusteriler.Size = new System.Drawing.Size(218, 26);
+            this.cmbMusteriler.TabIndex = 122;
+            // 
+            // btnCikis
+            // 
+            this.btnCikis.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCikis.EditValue = ((object)(resources.GetObject("btnCikis.EditValue")));
+            this.btnCikis.Location = new System.Drawing.Point(346, 3);
+            this.btnCikis.Name = "btnCikis";
+            this.btnCikis.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.btnCikis.Properties.Appearance.Options.UseBackColor = true;
+            this.btnCikis.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.btnCikis.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.btnCikis.Size = new System.Drawing.Size(50, 50);
+            this.btnCikis.TabIndex = 123;
+            this.btnCikis.Click += new System.EventHandler(this.btnCikis_Click);
+            // 
+            // cmbPersoneller
+            // 
+            this.cmbPersoneller.EditValue = "Kategori Seçiniz";
+            this.cmbPersoneller.Location = new System.Drawing.Point(122, 209);
+            this.cmbPersoneller.Name = "cmbPersoneller";
+            this.cmbPersoneller.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.cmbPersoneller.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbPersoneller.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.cmbPersoneller.Properties.Appearance.Options.UseBackColor = true;
+            this.cmbPersoneller.Properties.Appearance.Options.UseFont = true;
+            this.cmbPersoneller.Properties.Appearance.Options.UseForeColor = true;
+            this.cmbPersoneller.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmbPersoneller.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbPersoneller.Properties.DisplayMember = "Adi";
+            this.cmbPersoneller.Properties.ValueMember = "ID";
+            this.cmbPersoneller.Size = new System.Drawing.Size(218, 26);
+            this.cmbPersoneller.TabIndex = 124;
+            // 
             // FrmYeniArizaliUrun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(227)))), ((int)(((byte)(116)))));
             this.ClientSize = new System.Drawing.Size(399, 405);
+            this.Controls.Add(this.cmbPersoneller);
+            this.Controls.Add(this.btnCikis);
+            this.Controls.Add(this.cmbMusteriler);
             this.Controls.Add(this.pictureEdit7);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.panel12);
@@ -276,24 +305,24 @@
             this.Controls.Add(this.txtTarih);
             this.Controls.Add(this.pictureEdit4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.txtPersonel);
             this.Controls.Add(this.pictureEdit3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtMusteriId);
             this.Controls.Add(this.pictureEdit1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmYeniArizaliUrun";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmYeniArizaliUrun";
+            this.Load += new System.EventHandler(this.FrmYeniArizaliUrun_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSeriNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit12.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTarih.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPersonel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMusteriId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbMusteriler.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCikis.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbPersoneller.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,10 +341,11 @@
         private DevExpress.XtraEditors.TextEdit txtTarih;
         private DevExpress.XtraEditors.PictureEdit pictureEdit4;
         private System.Windows.Forms.Panel panel3;
-        private DevExpress.XtraEditors.TextEdit txtPersonel;
         private DevExpress.XtraEditors.PictureEdit pictureEdit3;
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraEditors.TextEdit txtMusteriId;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
+        private DevExpress.XtraEditors.LookUpEdit cmbMusteriler;
+        private DevExpress.XtraEditors.PictureEdit btnCikis;
+        private DevExpress.XtraEditors.LookUpEdit cmbPersoneller;
     }
 }

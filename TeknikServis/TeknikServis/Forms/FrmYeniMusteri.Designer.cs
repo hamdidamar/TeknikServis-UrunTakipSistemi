@@ -32,10 +32,8 @@
             this.btnVazgec = new DevExpress.XtraEditors.SimpleButton();
             this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.txtMusteriİlce = new DevExpress.XtraEditors.TextEdit();
             this.pictureEdit6 = new DevExpress.XtraEditors.PictureEdit();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.txtMusteriİl = new DevExpress.XtraEditors.TextEdit();
             this.pictureEdit5 = new DevExpress.XtraEditors.PictureEdit();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtMusteriMail = new DevExpress.XtraEditors.TextEdit();
@@ -67,11 +65,12 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.pictureEdit7 = new DevExpress.XtraEditors.PictureEdit();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.ımageSlider1 = new DevExpress.XtraEditors.Controls.ImageSlider();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMusteriİlce.Properties)).BeginInit();
+            this.ımageSlider1 = new DevExpress.XtraEditors.Controls.ImageSlider();
+            this.cmbMusteriIL = new DevExpress.XtraEditors.LookUpEdit();
+            this.cmbMusteriILCE = new DevExpress.XtraEditors.LookUpEdit();
+            this.btnCikis = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMusteriİl.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMusteriMail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).BeginInit();
@@ -94,6 +93,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit7.Properties)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ımageSlider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbMusteriIL.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbMusteriILCE.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCikis.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnVazgec
@@ -125,21 +127,6 @@
             this.panel6.Size = new System.Drawing.Size(220, 3);
             this.panel6.TabIndex = 39;
             // 
-            // txtMusteriİlce
-            // 
-            this.txtMusteriİlce.EditValue = "İlçe";
-            this.txtMusteriİlce.Location = new System.Drawing.Point(375, 384);
-            this.txtMusteriİlce.Name = "txtMusteriİlce";
-            this.txtMusteriİlce.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.txtMusteriİlce.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtMusteriİlce.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.txtMusteriİlce.Properties.Appearance.Options.UseBackColor = true;
-            this.txtMusteriİlce.Properties.Appearance.Options.UseFont = true;
-            this.txtMusteriİlce.Properties.Appearance.Options.UseForeColor = true;
-            this.txtMusteriİlce.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtMusteriİlce.Size = new System.Drawing.Size(182, 24);
-            this.txtMusteriİlce.TabIndex = 38;
-            // 
             // pictureEdit6
             // 
             this.pictureEdit6.EditValue = ((object)(resources.GetObject("pictureEdit6.EditValue")));
@@ -161,21 +148,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(220, 3);
             this.panel5.TabIndex = 36;
-            // 
-            // txtMusteriİl
-            // 
-            this.txtMusteriİl.EditValue = "İl";
-            this.txtMusteriİl.Location = new System.Drawing.Point(375, 329);
-            this.txtMusteriİl.Name = "txtMusteriİl";
-            this.txtMusteriİl.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
-            this.txtMusteriİl.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtMusteriİl.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.txtMusteriİl.Properties.Appearance.Options.UseBackColor = true;
-            this.txtMusteriİl.Properties.Appearance.Options.UseFont = true;
-            this.txtMusteriİl.Properties.Appearance.Options.UseForeColor = true;
-            this.txtMusteriİl.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txtMusteriİl.Size = new System.Drawing.Size(182, 24);
-            this.txtMusteriİl.TabIndex = 35;
             // 
             // pictureEdit5
             // 
@@ -558,6 +530,18 @@
             this.panel7.Size = new System.Drawing.Size(301, 468);
             this.panel7.TabIndex = 59;
             // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.White;
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Appearance.Options.UseForeColor = true;
+            this.labelControl2.Location = new System.Drawing.Point(67, 88);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(157, 29);
+            this.labelControl2.TabIndex = 58;
+            this.labelControl2.Text = "Destekçilerimiz";
+            // 
             // ımageSlider1
             // 
             this.ımageSlider1.CurrentImageIndex = 0;
@@ -577,17 +561,56 @@
             this.ımageSlider1.TabIndex = 0;
             this.ımageSlider1.Text = "ımageSlider1";
             // 
-            // labelControl2
+            // cmbMusteriIL
             // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(67, 88);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(157, 29);
-            this.labelControl2.TabIndex = 58;
-            this.labelControl2.Text = "Destekçilerimiz";
+            this.cmbMusteriIL.Location = new System.Drawing.Point(375, 322);
+            this.cmbMusteriIL.Name = "cmbMusteriIL";
+            this.cmbMusteriIL.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.cmbMusteriIL.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbMusteriIL.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.cmbMusteriIL.Properties.Appearance.Options.UseBackColor = true;
+            this.cmbMusteriIL.Properties.Appearance.Options.UseFont = true;
+            this.cmbMusteriIL.Properties.Appearance.Options.UseForeColor = true;
+            this.cmbMusteriIL.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmbMusteriIL.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbMusteriIL.Properties.DisplayMember = "sehir";
+            this.cmbMusteriIL.Properties.ValueMember = "id";
+            this.cmbMusteriIL.Size = new System.Drawing.Size(218, 26);
+            this.cmbMusteriIL.TabIndex = 59;
+            this.cmbMusteriIL.EditValueChanged += new System.EventHandler(this.cmbMusteriIL_EditValueChanged);
+            // 
+            // cmbMusteriILCE
+            // 
+            this.cmbMusteriILCE.Location = new System.Drawing.Point(375, 382);
+            this.cmbMusteriILCE.Name = "cmbMusteriILCE";
+            this.cmbMusteriILCE.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.cmbMusteriILCE.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbMusteriILCE.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.cmbMusteriILCE.Properties.Appearance.Options.UseBackColor = true;
+            this.cmbMusteriILCE.Properties.Appearance.Options.UseFont = true;
+            this.cmbMusteriILCE.Properties.Appearance.Options.UseForeColor = true;
+            this.cmbMusteriILCE.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.cmbMusteriILCE.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbMusteriILCE.Properties.DisplayMember = "ilce";
+            this.cmbMusteriILCE.Properties.ValueMember = "id";
+            this.cmbMusteriILCE.Size = new System.Drawing.Size(218, 26);
+            this.cmbMusteriILCE.TabIndex = 60;
+            // 
+            // btnCikis
+            // 
+            this.btnCikis.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCikis.EditValue = ((object)(resources.GetObject("btnCikis.EditValue")));
+            this.btnCikis.Location = new System.Drawing.Point(859, 4);
+            this.btnCikis.Name = "btnCikis";
+            this.btnCikis.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.btnCikis.Properties.Appearance.Options.UseBackColor = true;
+            this.btnCikis.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.btnCikis.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.btnCikis.Size = new System.Drawing.Size(50, 50);
+            this.btnCikis.TabIndex = 61;
+            this.btnCikis.Click += new System.EventHandler(this.btnCikis_Click);
             // 
             // FrmYeniMusteri
             // 
@@ -595,6 +618,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(56)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(911, 468);
+            this.Controls.Add(this.btnCikis);
+            this.Controls.Add(this.cmbMusteriILCE);
+            this.Controls.Add(this.cmbMusteriIL);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.pictureEdit7);
             this.Controls.Add(this.labelControl1);
@@ -615,10 +641,8 @@
             this.Controls.Add(this.btnVazgec);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.txtMusteriİlce);
             this.Controls.Add(this.pictureEdit6);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.txtMusteriİl);
             this.Controls.Add(this.pictureEdit5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.txtMusteriMail);
@@ -637,9 +661,8 @@
             this.Name = "FrmYeniMusteri";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmYeniMusteri";
-            ((System.ComponentModel.ISupportInitialize)(this.txtMusteriİlce.Properties)).EndInit();
+            this.Load += new System.EventHandler(this.FrmYeniMusteri_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMusteriİl.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMusteriMail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit4.Properties)).EndInit();
@@ -663,6 +686,9 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ımageSlider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbMusteriIL.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbMusteriILCE.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCikis.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -673,10 +699,8 @@
         private DevExpress.XtraEditors.SimpleButton btnVazgec;
         private DevExpress.XtraEditors.SimpleButton btnKaydet;
         private System.Windows.Forms.Panel panel6;
-        private DevExpress.XtraEditors.TextEdit txtMusteriİlce;
         private DevExpress.XtraEditors.PictureEdit pictureEdit6;
         private System.Windows.Forms.Panel panel5;
-        private DevExpress.XtraEditors.TextEdit txtMusteriİl;
         private DevExpress.XtraEditors.PictureEdit pictureEdit5;
         private System.Windows.Forms.Panel panel4;
         private DevExpress.XtraEditors.TextEdit txtMusteriMail;
@@ -710,5 +734,8 @@
         private System.Windows.Forms.Panel panel7;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.Controls.ImageSlider ımageSlider1;
+        private DevExpress.XtraEditors.LookUpEdit cmbMusteriIL;
+        private DevExpress.XtraEditors.LookUpEdit cmbMusteriILCE;
+        private DevExpress.XtraEditors.PictureEdit btnCikis;
     }
 }

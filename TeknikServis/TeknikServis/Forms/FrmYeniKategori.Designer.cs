@@ -34,8 +34,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtKategoriAd = new DevExpress.XtraEditors.TextEdit();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.btnCikis = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKategoriAd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCikis.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnVazgec
@@ -89,10 +91,25 @@
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit1.Size = new System.Drawing.Size(50, 50);
             this.pictureEdit1.TabIndex = 22;
+            // 
+            // btnCikis
+            // 
+            this.btnCikis.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCikis.EditValue = ((object)(resources.GetObject("btnCikis.EditValue")));
+            this.btnCikis.Location = new System.Drawing.Point(390, 3);
+            this.btnCikis.Name = "btnCikis";
+            this.btnCikis.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.btnCikis.Properties.Appearance.Options.UseBackColor = true;
+            this.btnCikis.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.btnCikis.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.btnCikis.Size = new System.Drawing.Size(50, 50);
+            this.btnCikis.TabIndex = 44;
+            this.btnCikis.Click += new System.EventHandler(this.btnCikis_Click);
             // 
             // FrmYeniKategori
             // 
@@ -100,17 +117,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(442, 218);
+            this.Controls.Add(this.btnCikis);
             this.Controls.Add(this.btnVazgec);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtKategoriAd);
             this.Controls.Add(this.pictureEdit1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmYeniKategori";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmYeniKategori";
+            this.Load += new System.EventHandler(this.FrmYeniKategori_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtKategoriAd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCikis.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -122,5 +143,6 @@
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.TextEdit txtKategoriAd;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
+        private DevExpress.XtraEditors.PictureEdit btnCikis;
     }
 }

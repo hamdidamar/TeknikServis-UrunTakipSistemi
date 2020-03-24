@@ -23,5 +23,10 @@ namespace TeknikServis.Forms
             QRCodeEncoder enc = new QRCodeEncoder();
             imgQRCode.Image = enc.Encode(txtSeriNo.Text);
         }
+
+        private void btnCikis_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

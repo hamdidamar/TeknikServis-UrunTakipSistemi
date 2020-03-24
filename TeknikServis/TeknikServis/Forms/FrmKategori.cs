@@ -35,14 +35,22 @@ namespace TeknikServis.Forms
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            Tbl_Kategori kategori = new Tbl_Kategori();
-            kategori.ID = int.Parse(txtKategoriId.Text);
-            kategori.Adi = txtKategoriAd.Text;
-
-            db.Tbl_Kategori.Add(kategori);
-            db.SaveChanges();
-            MessageBox.Show("Kategori Ekleme İşlemi Başarılı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Listele();
+            if (txtKategoriAd.Text !="" && txtKategoriAd.Text.Length <=50)
+            {
+                Tbl_Kategori kategori = new Tbl_Kategori();
+                kategori.ID = int.Parse(txtKategoriId.Text);
+                kategori.Adi = txtKategoriAd.Text;
+                db.Tbl_Kategori.Add(kategori);
+                db.SaveChanges();
+                MessageBox.Show("Kategori Ekleme İşlemi Başarılı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Listele();
+            }
+            else
+            {
+                MessageBox.Show("Lütfen Girdiğiniz Değerleri Kontrol Ediniz", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Listele();
+            }
+            
         }
 
         private void btnSil_Click(object sender, EventArgs e)
@@ -70,5 +78,12 @@ namespace TeknikServis.Forms
             txtKategoriId.Text = gridView1.GetFocusedRowCellValue("ID").ToString();
             txtKategoriAd.Text = gridView1.GetFocusedRowCellValue("Adi").ToString();
         }
+
+        private void btnTemizle_Click(object sender, EventArgs e)
+        {
+            txtKategoriId.Text = "";
+            txtKategoriAd.Text = "";
+        }
+
     }
 }

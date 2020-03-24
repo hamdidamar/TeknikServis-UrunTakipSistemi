@@ -10,14 +10,10 @@
 namespace TeknikServis
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Tbl_Not
+    public partial class UrunKategori_Result
     {
-        public int ID { get; set; }
-        public string Baslik { get; set; }
-        public string Icerik { get; set; }
-        public Nullable<bool> Durum { get; set; }
-        public Nullable<System.DateTime> Tarih { get; set; }
+        public string Adi { get; set; }
+        public Nullable<int> Adet { get; set; }
     }
 }

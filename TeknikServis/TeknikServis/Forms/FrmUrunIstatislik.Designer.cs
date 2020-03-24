@@ -1076,7 +1076,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FrmUrunIstatislik";
-            this.Text = "FrmUrunIstatislik";
+            this.Text = "Ürün İstatislikleri";
             this.Load += new System.EventHandler(this.FrmUrunIstatislik_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

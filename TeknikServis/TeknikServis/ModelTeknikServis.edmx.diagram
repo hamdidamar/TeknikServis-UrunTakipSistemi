@@ -32,6 +32,9 @@
         <AssociationConnector Association="DboTeknikServisModel.FK_Tbl_UrunHareket_Tbl_Urun" ManuallyRouted="false" />
         <EntityTypeShape EntityType="DboTeknikServisModel.Tbl_Hakkimizda" Width="1.5" PointX="12.375" PointY="8.75" />
         <EntityTypeShape EntityType="DboTeknikServisModel.Tbl_Iletisim" Width="1.5" PointX="12.375" PointY="11.75" />
+        <EntityTypeShape EntityType="DboTeknikServisModel.Tbl_IL" Width="1.5" PointX="13.375" PointY="6" />
+        <EntityTypeShape EntityType="DboTeknikServisModel.Tbl_ILCE" Width="1.5" PointX="15.625" PointY="5.875" />
+        <AssociationConnector Association="DboTeknikServisModel.FK_Tbl_ILCE_Tbl_IL" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

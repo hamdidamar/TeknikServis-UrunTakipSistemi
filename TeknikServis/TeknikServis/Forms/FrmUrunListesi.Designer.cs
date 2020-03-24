@@ -32,6 +32,7 @@
             this.grdUrunListesi = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gcUrunListesi = new DevExpress.XtraEditors.GroupControl();
+            this.btnTemizle = new DevExpress.XtraEditors.SimpleButton();
             this.txtUrunId = new DevExpress.XtraEditors.TextEdit();
             this.lblUrunId = new DevExpress.XtraEditors.LabelControl();
             this.btnGuncelle = new DevExpress.XtraEditors.SimpleButton();
@@ -83,6 +84,7 @@
             // 
             // gcUrunListesi
             // 
+            this.gcUrunListesi.Controls.Add(this.btnTemizle);
             this.gcUrunListesi.Controls.Add(this.txtUrunId);
             this.gcUrunListesi.Controls.Add(this.lblUrunId);
             this.gcUrunListesi.Controls.Add(this.btnGuncelle);
@@ -105,6 +107,16 @@
             this.gcUrunListesi.Size = new System.Drawing.Size(322, 535);
             this.gcUrunListesi.TabIndex = 1;
             this.gcUrunListesi.Text = "Ürün İşlemleri";
+            // 
+            // btnTemizle
+            // 
+            this.btnTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTemizle.ImageOptions.Image")));
+            this.btnTemizle.Location = new System.Drawing.Point(115, 384);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(150, 32);
+            this.btnTemizle.TabIndex = 18;
+            this.btnTemizle.Text = "Temizle";
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // txtUrunId
             // 
@@ -163,6 +175,7 @@
             // 
             // cmbKategoriler
             // 
+            this.cmbKategoriler.EditValue = "Kategori Seçiniz";
             this.cmbKategoriler.Location = new System.Drawing.Point(115, 229);
             this.cmbKategoriler.Name = "cmbKategoriler";
             this.cmbKategoriler.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -171,7 +184,6 @@
             this.cmbKategoriler.Properties.ValueMember = "ID";
             this.cmbKategoriler.Size = new System.Drawing.Size(150, 20);
             this.cmbKategoriler.TabIndex = 10;
-            this.cmbKategoriler.Visible = false;
             // 
             // txtStok
             // 
@@ -256,7 +268,7 @@
             this.Controls.Add(this.gcUrunListesi);
             this.Controls.Add(this.grdUrunListesi);
             this.Name = "FrmUrunListesi";
-            this.Text = "FrmUrunListesi";
+            this.Text = "Ürün Listesi";
             this.Load += new System.EventHandler(this.FrmUrunListesi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdUrunListesi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -296,5 +308,6 @@
         private DevExpress.XtraEditors.LookUpEdit cmbKategoriler;
         private DevExpress.XtraEditors.TextEdit txtUrunId;
         private DevExpress.XtraEditors.LabelControl lblUrunId;
+        private DevExpress.XtraEditors.SimpleButton btnTemizle;
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace TeknikServis.Forms
 {
@@ -32,20 +33,34 @@ namespace TeknikServis.Forms
             lblEnYuksekFiyatliMarka.Text = (from x in db.Tbl_Urun
                                            orderby x.SatisFiyat descending
                                            select x.Marka).FirstOrDefault();
+            lblEnFazlaUrunuOlanMarka.Text = db.MaxUrunMarka().FirstOrDefault().ToString();
+
             //Pie Chart 
-            chartControl1.Series["Series 1"].Points.AddPoint("Siemens", 4);
-            chartControl1.Series["Series 1"].Points.AddPoint("Vestel", 20);
-            chartControl1.Series["Series 1"].Points.AddPoint("Arçelik", 12);
-            chartControl1.Series["Series 1"].Points.AddPoint("Arzum", 30);
-            chartControl1.Series["Series 1"].Points.AddPoint("Samsung", 50);
-            chartControl1.Series["Series 1"].Points.AddPoint("Toshiba", 42);
+            SqlConnection bgl = new SqlConnection(@"Data Source=HAMDIDAMAR\SQL_2014;Initial Catalog=DboTeknikServis;Integrated Security=True");
+            bgl.Open();
+
+            SqlCommand cmd = new SqlCommand("SELECT Marka,COUNT(*) FROM Tbl_Urun GROUP BY Marka",bgl);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                chartControl1.Series["Series 1"].Points.AddPoint(dr[0].ToString(), int.Parse(dr[1].ToString()));
+            }
+            bgl.Close();
+
+
 
             //Stacked Bar Chart
-            chartControl2.Series["Kategoriler"].Points.AddPoint("Beyaz Eşya", 15);
-            chartControl2.Series["Kategoriler"].Points.AddPoint("Bilgisayar", 8);
-            chartControl2.Series["Kategoriler"].Points.AddPoint("TV", 19);
-            chartControl2.Series["Kategoriler"].Points.AddPoint("Küçük Ev Aletleri", 39);
-            chartControl2.Series["Kategoriler"].Points.AddPoint("Mobilya", 24);
+            bgl.Open();
+
+            SqlCommand cmd1 = new SqlCommand("SELECT K.Adi,COUNT(*) FROM Tbl_Urun U INNER JOIN Tbl_Kategori K ON U.KategoriID = K.ID GROUP BY K.Adi", bgl);
+            SqlDataReader dr2 = cmd1.ExecuteReader();
+            while (dr2.Read())
+            {
+                chartControl2.Series["Kategoriler"].Points.AddPoint(dr2[0].ToString(), int.Parse(dr2[1].ToString()));
+            }
+            bgl.Close();
+
+
 
         }
     }

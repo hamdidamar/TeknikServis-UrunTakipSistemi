@@ -12,12 +12,12 @@ namespace TeknikServis
     using System;
     using System.Collections.Generic;
     
-    public partial class Tbl_Not
+    public partial class Tbl_ILCE
     {
-        public int ID { get; set; }
-        public string Baslik { get; set; }
-        public string Icerik { get; set; }
-        public Nullable<bool> Durum { get; set; }
-        public Nullable<System.DateTime> Tarih { get; set; }
+        public int id { get; set; }
+        public string ilce { get; set; }
+        public int sehir { get; set; }
+    
+        public virtual Tbl_IL Tbl_IL { get; set; }
     }
 }
