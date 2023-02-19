@@ -5,16 +5,6 @@
 
 Web Kodları için -> [Web Repository](https://github.com/hamdidamar/TeknikServis-Web)
 
-## Geliştirici
-
-👤 **Hamdi DAMAR**
-
-- [Web Site](http://hamdidamar.com/?i=1)
-- [LinkedIn](https://www.linkedin.com/in/hamdi-damar-bb6a8b159/)
-- [Medium](https://medium.com/@damar14607)
-- [GitHub](https://github.com/hamdidamar)
-- [Twitter](https://twitter.com/DamarHamdi)
-
 
 ### Demo
 ![Ajanda](https://user-images.githubusercontent.com/61479214/77448060-75499280-6e01-11ea-911d-e318c74baa1a.PNG)
